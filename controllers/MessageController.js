@@ -10,6 +10,15 @@ const GetMessages = async (req, res) => {
   }
 }
 
+const GetMessage = async (req, res) => {
+  try {
+    const message = await Request.findByIdAndUpdate(req.params.message_id, req.body, {new: true})
+    res.send(message)
+  } catch (error) {
+    throw error
+  }
+}
+
 const CreateMessage = async (req, res) => {
   try {
     const message = await Message.create({ ...req.body })
@@ -39,6 +48,7 @@ const DeleteMessage = async (req, res) => {
 
 module.exports = {
   GetMessages,
+  GetMessage,
   CreateMessage,
   UpdateMessage,
   DeleteMessage

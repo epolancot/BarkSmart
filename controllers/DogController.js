@@ -1,12 +1,21 @@
 const { Dog } = require('../models')
 
 
-const GetDogs = async (req, res) => {
+const GetAll = async (req, res) => {
     try {
         const dogs = await Dog.find({})
         res.send(dogs)
     } catch (error) {
         throw error
+    }
+}
+
+const GetDog = async (req, res) => {
+    try {
+        const dog = await Dog.findById(req.params.dog_id)
+        res.send(dog)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
     }
 }
 
@@ -38,7 +47,8 @@ const DeleteDog = async (req, res) => {
 }
 
 module.exports = {
-    GetDogs,
+    GetAll,
+    GetDog,
     CreateDog,
     UpdateDog,
     DeleteDog

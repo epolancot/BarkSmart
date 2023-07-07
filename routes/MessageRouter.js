@@ -3,6 +3,7 @@ const controller = require('../controllers/MessageController')
 const middleware = require('../middleware')
 
 router.get('/', controller.GetMessages)
+router.get('/:message_id', controller.GetMessage)
 router.post('/',
             controller.CreateMessage)
 router.put('/:message_id',             

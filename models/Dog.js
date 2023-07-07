@@ -25,6 +25,9 @@ const dogSchema = new Schema(
             by: {
                 type: String,
             },
+            avatar: {
+                type: String,
+            },
             date: {
                 type: Date
             },

@@ -10,6 +10,15 @@ const GetRequests = async (req, res) => {
   }
 }
 
+const GetRequest = async (req, res) => {
+  try {
+      const request = await Request.findById(req.params.request_id)
+      res.send(request)
+  } catch (error) {
+      res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+  }
+}
+
 const CreateRequest = async (req, res) => {
   try {
     const request = await Request.create({ ...req.body })
@@ -39,6 +48,7 @@ const DeleteRequest = async (req, res) => {
 
 module.exports = {
   GetRequests,
+  GetRequest,
   CreateRequest,
   UpdateRequest,
   DeleteRequest

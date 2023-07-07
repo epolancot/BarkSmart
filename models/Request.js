@@ -19,7 +19,11 @@ const requestSchema = new Schema(
     dog: { 
       type: Schema.Types.ObjectId,
       ref: 'Dog',
-      required: true }
+      required: true 
+    },
+    message: { 
+      type: String, 
+    }
   },
   { timestamps: true }
 )

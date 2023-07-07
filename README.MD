@@ -15,13 +15,13 @@ BarkSmart is a tool for dog owners to find trainers for their furry friends. Uti
 ---
 ## Technologies
 
-![Technologies Used](https://skillicons.dev/icons?i=mongo,express,react,nodejs,html,css)
+![Technologies Used](https://skillicons.dev/icons?i=mongo,express,react,nodejs,postman,html,css)
 
 |            |          |
 | ---------- | -------- |
 | MongoDB    | NodeJS   |
-| Express    | HTML5    |
-| React      | CSS3     |
+| Express    | Postman  |
+| React      | Html5/CSS3|
 ---
 
 ## API Integration

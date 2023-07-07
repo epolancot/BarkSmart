@@ -10,7 +10,15 @@ const messageSchema = new Schema(
             type: String, 
             required: true 
         },
+        senderType: { 
+            type: String, 
+            required: true 
+        },
         recipient: { 
+            type: String, 
+            required: true 
+        },
+        recipientType: { 
             type: String, 
             required: true 
         },

@@ -41,7 +41,36 @@ const Register = async (req, res) => {
     }
 }
 
+const GetAll = async (req, res) => {
+    try {
+        const trainers = await Trainer.find({})
+        res.send(trainers)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+    }
+}
+
+const GetProfile = async (req, res) => {
+    try {
+        const profile = await Trainer.findById(req.params.trainer_id)
+        res.send(profile)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+    }
+}
+
+const UpdateProfile = async (req, res) => {
+    try {
+        const profile = await Trainer.findByIdAndUpdate(req.params.trainer_id, req.body, { new: true })
+        res.send(profile)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+    }
+}
 module.exports = {
     Login,
-    Register
+    Register,
+    GetAll,
+    GetProfile,
+    UpdateProfile
 }
