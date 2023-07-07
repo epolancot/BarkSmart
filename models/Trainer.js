@@ -29,8 +29,19 @@ const trainerSchema = new Schema(
             type: Number
         },
         dogs: [{
-            type: String,
-        }]
+            type: Schema.Types.ObjectId,
+            ref: 'Dog'
+        }],
+        messages: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Message'
+        }],
+        zipCodes: {
+            type: Number
+        },
+        rating: {
+            type: Number
+        }
     },
     { timestamps: true }
 )

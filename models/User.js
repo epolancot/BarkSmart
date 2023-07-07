@@ -21,7 +21,10 @@ const userSchema = new Schema(
     passwordDigest: { 
       type: String 
     },
-    dogs: []
+    dogs: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Dog'
+    }]
   },
   { timestamps: true }
 )

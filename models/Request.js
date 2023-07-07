@@ -2,10 +2,24 @@ const { Schema } = require('mongoose')
 
 const requestSchema = new Schema(
   {
-    status: { type: String, required: true },
-    user: { type: String, required: true },
-    trainer: { type: String, required: true },
-    dog: { type: String, required: true }
+    status: { 
+      type: String, 
+      required: true 
+    },
+    user: { 
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true 
+    },
+    trainer: { 
+      type: Schema.Types.ObjectId,
+      ref: 'Trainer',
+      required: true 
+    },
+    dog: { 
+      type: Schema.Types.ObjectId,
+      ref: 'Dog',
+      required: true }
   },
   { timestamps: true }
 )

@@ -23,20 +23,22 @@ const dogSchema = new Schema(
         },
         comments: [{
             by: {
-                type: String
+                type: String,
             },
             date: {
-                type: String
+                type: Date
             },
             body: {
                 type: String
             }
         }],
         owner: {
-            type: String
+            type: Schema.Types.ObjectId,
+            ref: 'User',
         },
         trainer: {
-            type: String
+            type: Schema.Types.ObjectId,
+            ref: 'Trainer',
         },
     },
     { timestamps: true }
