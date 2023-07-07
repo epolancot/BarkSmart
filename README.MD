@@ -39,7 +39,7 @@ Third party API from API Ninjas. Utilizing a database of 200+ dog breeds, users 
 ---
 
 ### Entity Relationship Diagram (ERD)
-![ERD](https://i.imgur.com/Zt3YNOs.png)
+![ERD](https://i.imgur.com/kiKi3nj.png)
 
 ---
 
