@@ -1,17 +1,17 @@
 const router = require('express').Router()
-const controller = require('../controllers/PostController')
+const controller = require('../controllers/DogController')
 const middleware = require('../middleware')
 
-router.get('/', controller.GetPosts)
+router.get('/', controller.GetDogs)
 router.post('/',
-            controller.CreatePost)
-router.put('/:post_id',             
+            controller.CreateDog)
+router.put('/:dog_id',             
             middleware.stripToken, 
             middleware.verifyToken,  
-            controller.UpdatePost)
-router.delete('/:post_id',            
+            controller.UpdateDog)
+router.delete('/:dog_id',            
                 middleware.stripToken, 
                 middleware.verifyToken,  
-                controller.DeletePost)
+                controller.DeleteDog)
 
 module.exports = router

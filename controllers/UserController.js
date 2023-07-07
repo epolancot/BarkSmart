@@ -3,8 +3,8 @@ const middleware = require('../middleware')
 
 const Login = async (req, res) => {
   try {
-    const { email, password } = req.body
-    const user = await User.findOne({ email })
+    const { username, password } = req.body
+    const user = await User.findOne({ username })
     let matched = await middleware.comparePassword(
       user.passwordDigest,
       password
@@ -27,13 +27,13 @@ const Login = async (req, res) => {
 const Register = async (req, res) => {
 
   try {
-    const { email, password, name } = req.body
+    const { username, password, confirmPassword, name, lastName, email } = req.body
     let passwordDigest = await middleware.hashPassword(password)
-    let existingUser = await User.findOne({ email })
+    let existingUser = await User.findOne({ username })
     if (existingUser) {
-      return res.status(400).send("A user with that email has already been registered!")
+      return res.status(400).send("Username not available!")
     } else {
-      const user = await User.create({ email, passwordDigest, name })
+      const user = await User.create({ username, passwordDigest, name, lastName, email })
       res.send(user)
     }
   } catch (error) {
