@@ -1,13 +1,20 @@
-.green-background {
+.themed-background {
     background-color: #3F497F;
     color: white !important;
 }
 
 nav .active {
     font-weight: bolder;
-    color:pink;
 }
 
 .navbar-brand {
     font-family: 'Vidaloka', serif;
+}
+
+.flex-wrapper {
+    display: flex;
+    min-height: 95vh;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
 }

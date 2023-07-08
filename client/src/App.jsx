@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBars/LandingNavBar'
+import LandingFooter from './components/Footers/LandingFooter'
 import Landing from './pages/Landing'
 
 
@@ -13,12 +14,17 @@ function App() {
         <header>
           <NavBar />
         </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-          </Routes>
-        </main>
-      </div>
+        <div className="flex-wrapper">
+          <main>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+            </Routes>
+          </main>
+          <footer>
+            <LandingFooter />
+          </footer>
+        </div>
+        </div>
     </>
   )
 }
