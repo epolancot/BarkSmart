@@ -1,4 +1,4 @@
-import Unauthorized from '../components/Unauthorized'
+import Unauthorized from '../../components/Unauthorized'
 
 const HomeUser = ({user}) => {
 

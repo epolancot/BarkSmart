@@ -50,6 +50,10 @@ nav .active {
     width: 40%;
 }
 
+.sign-up-image {
+    border-radius: 15px;
+    max-height: 400px;
+}
 .link {
     text-decoration: none;
 }

@@ -1,10 +1,10 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { BASE_URL } from '../components/Globals'
-import { DOG_API_KEY } from '../Api-key'
-import ApiSearchBox from '../components/Search/Dog-API/ApiSearchBox'
-import ApiSearchResults from '../components/Search/Dog-API/ApiSearchResults'
+import { BASE_URL } from '../../components/Globals'
+import { DOG_API_KEY } from '../../Api-key'
+import ApiSearchBox from '../../components/Search/Dog-API/ApiSearchBox'
+import ApiSearchResults from '../../components/Search/Dog-API/ApiSearchResults'
 
 const SearchApi = () => {
     const [searchResults, setSearchResults] = useState([])
