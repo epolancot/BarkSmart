@@ -1,8 +1,8 @@
 import Client from './api'
 
-export const GetPosts = async () => {
+export const GetDogsByOwnerId = async (id) => {
     try {
-        const res = await Client.get('/posts')
+        const res = await Client.get('/dog/owner/'+id)
         return res.data
     } catch (error) {
         throw error

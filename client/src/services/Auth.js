@@ -40,6 +40,15 @@ export const RegisterTrainer = async (data) => {
     }
 }
 
+export const RegisterDog = async (data) => {
+    try {
+        const res = await Client.post('/dog', data)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}
+
 export const CheckSession = async () => {
     try {
         // Checks if the current token if it exists is valid
