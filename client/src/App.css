@@ -3,6 +3,26 @@
     color: white !important;
 }
 
+.themed-btn {
+    background-color: #3F497F;
+    color: white !important;
+}
+
+.themed-btn:hover {
+    background-color:#25306f;
+    color: white !important;
+}
+
+.themed-card-header {
+    background-color: #25306f;
+    color: white;
+}
+
+.paws-emoji-white {
+    color: transparent;  
+    text-shadow: 0 0 0 white;
+}
+
 nav .active {
     font-weight: bold;
 }

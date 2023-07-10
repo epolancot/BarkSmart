@@ -17,7 +17,7 @@ const LoginUser = ({setUser}) => {
         const payload = await SignInUser(formValues)
         setFormValues({ username: '', password: '' })
         setUser(payload)
-        navigate('/home')
+        navigate('/user/home')
     
     }
 

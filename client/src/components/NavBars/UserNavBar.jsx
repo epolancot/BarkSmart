@@ -11,13 +11,13 @@ const UserNavBar = ({handleLogOut}) => {
                 <div className="collapse navbar-collapse" id="navbarToggler">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link">Home</NavLink>
+                            <NavLink to="/user/home" className="nav-link">Home</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/search" className="nav-link">Search</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link to='/' onClick={handleLogOut} className="nav-link">Log Out</Link>
+                            <Link to='/user/login' onClick={handleLogOut} className="nav-link">Log Out</Link>
                         </li>
                     </ul>
                 </div>

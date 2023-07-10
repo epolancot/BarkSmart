@@ -4,7 +4,8 @@ import { Routes, Route } from 'react-router-dom'
 import { CheckSession } from './services/Auth'
 import LandingNavBar from './components/NavBars/LandingNavBar'
 import UserNavBar from './components/NavBars/UserNavBar'
-import LandingFooter from './components/Footers/LandingFooter'
+import TrainerNavBar from './components/NavBars/TrainerNavBar'
+import Footer from './components/Footers/Footer'
 import Landing from './pages/Open/Landing'
 import SearchApi from './pages/Shared/SearchApi'
 import LoginUser from './pages/Users/LoginUser'
@@ -38,9 +39,14 @@ function App() {
     localStorage.clear()
   }
 
+  console.log(user)
   let navBar
   if (user) {
-    navBar = <UserNavBar handleLogOut={handleLogOut}/>
+    if (user.accountType === "trainer") {
+      navBar = <TrainerNavBar handleLogOut={handleLogOut}/>
+    } else {
+      navBar = <UserNavBar handleLogOut={handleLogOut}/>
+    }
   } else {
     navBar = <LandingNavBar />
   }
@@ -66,7 +72,7 @@ function App() {
             </Routes>
           </main>
           <footer>
-            <LandingFooter />
+            <Footer user={user}/>
           </footer>
         </div>
         </div>
