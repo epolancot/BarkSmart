@@ -154,6 +154,22 @@ nav .active {
     text-decoration: none;
 }
 
+.full-profile-card-img-bg {
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #3F497F;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(83, 145, 101));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(83, 145, 101))
+}
+
 @media (max-width: 768px) {
     .api-search-results-grid {
         grid-template-columns: repeat(2, minmax(300px, 1fr));
@@ -169,5 +185,12 @@ nav .active {
 
     .short-card {
         width: 100%;
+    }
+
+    .full-profile-card-img-bg {
+        border-top-left-radius: 0rem;
+        border-bottom-left-radius: 0rem;
+        border-top-right-radius: .5rem;
+        border-top-left-radius: .5rem;
     }
 }

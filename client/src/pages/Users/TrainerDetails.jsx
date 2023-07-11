@@ -1,6 +1,11 @@
+import ProfileCardFull from '../../components/Cards/FullProfileCard'
+
 const TrainerDetails = () => {
     return (
-        <div></div>
+        <div>
+            <ProfileCardFull />
+        </div>
+   
     )
 }
 
