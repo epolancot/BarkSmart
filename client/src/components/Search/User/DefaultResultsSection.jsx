@@ -1,16 +1,15 @@
 import TrainerCard from '../../Cards/TrainerCard'
 
-const TrainerSearchResults = ({searchResults}) => {
+const DefaultResultsSection = ({trainersList}) => {
     return (
         <div>
-                {searchResults.map((trainer) => (
+            {trainersList.map((trainer) => (
                 <div key={trainer._id}>
                     <TrainerCard trainer={trainer}/>
                 </div>
             ))}
-            
         </div>
     )
 }
 
-export default TrainerSearchResults
+export default DefaultResultsSection

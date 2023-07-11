@@ -6,7 +6,8 @@ import { BASE_BACKEND_URL } from '../../services/api'
 import { GetTrainers, GetTrainersByZipCode, GetTrainersByName } from '../../services/TrainerServices'
 import SearchBox  from '../../components/Search/Shared/SearchBox'
 import TrainerSearchResults from '../../components/Search/User/TrainersSearchResults'
-import TrainerCard from '../../components/Cards/TrainerCard'
+import DefaultResultsSection from '../../components/Search/User/DefaultResultsSection'
+
 
 
 
@@ -48,30 +49,31 @@ const SearchTrainers = ({ user }) => {
 
         }
     }
+
+    let searchResultsSection = "" 
+    let defaultResultsSection 
     
     const handleChange = (event) => {
         setSearchQuery(event.target.value)
     }
 
-    let searchResultsSection    
-
     if (searched) {
         if (searchResults.length === 0) {
-            searchResultsSection = <div className="search-message"><h2>No information matching your search criteria found.</h2></div>
+            searchResultsSection = <div className="search-message mt-5 text-center"><h2>No trainer matching your search criteria found.</h2></div>
+            defaultResultsSection = ""
         } else {
-            searchResultsSection = ""
+            searchResultsSection = <TrainerSearchResults searchResults={searchResults}/>
+            defaultResultsSection = ""
         }
+    } else {
+        defaultResultsSection = <DefaultResultsSection trainersList={trainersList} />
     }
 
     return (
         <div className="container">
             <SearchBox onSubmit={getSearchResults} onChange={handleChange} value={searchQuery} placeholder={searchPlaceholder}/>
-            <TrainerSearchResults />
-            {trainersList.map((trainer) => (
-                <div key={trainer._id}>
-                    <TrainerCard trainer={trainer}/>
-                </div>
-            ))}
+            {searchResultsSection}
+            {defaultResultsSection}
         </div>
     )
 }

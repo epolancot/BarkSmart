@@ -9,7 +9,7 @@
 }
 
 .themed-btn:hover {
-    background-color:#25306f;
+    background-color: #25306f;
     color: white !important;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .paws-emoji-white {
-    color: transparent;  
+    color: transparent;
     text-shadow: 0 0 0 white;
 }
 
@@ -55,11 +55,11 @@ nav .active {
     height: 100%;
 }
 
-.results-card:hover {   
+.results-card:hover {
     transform: scale(1.05);
 }
 
-.login-image{
+.login-image {
     border-radius: 20px;
     width: 80%;
     margin-bottom: 15px;
@@ -75,8 +75,8 @@ nav .active {
     height: 80px;
     border-radius: 50%;
     overflow: hidden;
-    display:inline-block;
-    vertical-align:middle;
+    display: inline-block;
+    vertical-align: middle;
     box-shadow: 0px 0px 1px 1px rgb(0, 0, 0);
 }
 
@@ -118,16 +118,27 @@ nav .active {
 
 .short-card {
     height: 100px;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(255, 255, 255, 0.3);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
 }
 
 .short-card:hover {
     height: 100px;
     cursor: pointer;
-    box-shadow: 1px 1px #3F497F;
+    transform: scale(1.01);
 }
+
+.short-card:focus {
+    background: #3F497F;
+    color: white;
+}
+
 .short-card p {
     font-size: 20px;
-    font-weight: bold;
 }
 
 .short-card-avatar {
@@ -135,8 +146,8 @@ nav .active {
     height: 80px;
     border-radius: 50%;
     overflow: hidden;
-    display:inline-block;
-    vertical-align:middle;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .link {
@@ -144,7 +155,7 @@ nav .active {
 }
 
 @media (max-width: 768px) {
-    .api-search-results-grid{
+    .api-search-results-grid {
         grid-template-columns: repeat(2, minmax(300px, 1fr));
         grid-gap: 15px;
     }
@@ -154,5 +165,9 @@ nav .active {
     .api-search-results-grid {
         grid-template-columns: repeat(1, minmax(300px, 1fr));
         grid-gap: 10px;
+    }
+
+    .short-card {
+        width: 100%;
     }
 }

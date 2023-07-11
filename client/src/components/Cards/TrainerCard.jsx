@@ -5,10 +5,10 @@ const TrainerCard = ({trainer}) => {
         <Link to={`/trainer/id/${trainer._id}`} style={{textDecoration: 'none'}}>
         <div className="card mt-3 short-card">
             <div className="row">
-                <div className="col-4 text-center">
+                <div className="col-4 col-md-6 text-center">
                     <img src={trainer.avatar} className="short-card-avatar mt-2" />
                 </div>
-                <div className="col-8 mt-4">
+                <div className="col-8 col-md-6 mt-4">
                     <p>{trainer.name} {trainer.lastName}</p>
                     <p>{trainer.experience}</p>
                 </div>
