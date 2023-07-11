@@ -9,11 +9,13 @@ import Footer from './components/Footers/Footer'
 import Landing from './pages/Open/Landing'
 import SearchApi from './pages/Shared/SearchApi'
 import LoginUser from './pages/Users/LoginUser'
-import LoginTrainer from './pages/Trainers/LoginTrainer'
 import RegisterUser from './pages/Users/RegisterUser'
-import RegisterTrainer from './pages/Trainers/RegisterTrainer'
 import HomeUser from './pages/Users/HomeUser'
+import SearchTrainer from './pages/Users/SearchTrainers'
+import LoginTrainer from './pages/Trainers/LoginTrainer'
+import RegisterTrainer from './pages/Trainers/RegisterTrainer'
 import HomeTrainer from './pages/Trainers/HomeTrainer'
+import TrainerDetails from './pages/Users/TrainerDetails'
 
 
 function App() {
@@ -42,9 +44,9 @@ function App() {
   let navBar
   if (user) {
     if (user.accountType === "trainer") {
-      navBar = <TrainerNavBar handleLogOut={handleLogOut}/>
+      navBar = <TrainerNavBar handleLogOut={handleLogOut} user={user}/>
     } else {
-      navBar = <UserNavBar handleLogOut={handleLogOut}/>
+      navBar = <UserNavBar handleLogOut={handleLogOut} user={user}/>
     }
   } else {
     navBar = <LandingNavBar />
@@ -61,13 +63,15 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Landing user={user}/>} />
-              <Route path="/user/login" element={<LoginUser setUser={setUser}/>} />
-              <Route path="/trainer/login" element={<LoginTrainer setUser={setUser}/>} />
-              <Route path="/user/register" element={<RegisterUser setUser={setUser}/>} />
-              <Route path="/trainer/register" element={<RegisterTrainer setUser={setUser}/>} />
               <Route path="/search-api" element={<SearchApi />} user={user} />
-              <Route path="/user/home/:id" element={<HomeUser user={user}/>} />
               <Route path="/trainer/home" element={<HomeTrainer user={user}/>} />
+              <Route path="/user/login" element={<LoginUser setUser={setUser}/>} />
+              <Route path="/user/register" element={<RegisterUser setUser={setUser}/>} />
+              <Route path="/user/home/:id" element={<HomeUser user={user}/>} />
+              <Route path="/user/search/trainer" element={<SearchTrainer user={user}/>} />
+              <Route path="/trainer/login" element={<LoginTrainer setUser={setUser}/>} />
+              <Route path="/trainer/register" element={<RegisterTrainer setUser={setUser}/>} />
+              <Route path="/trainer/id/:id" element={<TrainerDetails setUser={setUser}/>} />
             </Routes>
           </main>
           <footer>

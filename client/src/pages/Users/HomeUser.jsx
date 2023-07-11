@@ -99,11 +99,30 @@ const HomeUser = ({ user }) => {
                             <h5><ChatLeftText /> Messages</h5>
                         </div>
                         <div className="card-body">
+                        <table className="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">From</th>
+                                    <th scope="col">To</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                             {userMessages.map((message, id) => (
-                                <div key={id}>
-                                    {message.body}
-                                </div>
+                                <tr key={id}>
+                                    <th>
+                                    {message.sender}
+                                    </th>
+                                    <th>
+                                    {message.recipient}
+                                    </th>
+                                    <th>
+                                    {message.createdAt}
+                                    </th>
+                                </tr>
                             ))}
+                            </tbody>
+                        </table>
                         </div>
                         <hr />
                         <div className="mb-3 d-flex justify-content-center">
