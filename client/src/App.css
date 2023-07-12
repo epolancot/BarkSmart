@@ -117,8 +117,9 @@ nav .active {
 }
 
 .short-card {
+    background: rgb(243, 240, 240);
     height: 100px;
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -129,7 +130,7 @@ nav .active {
 .short-card:hover {
     height: 100px;
     cursor: pointer;
-    transform: scale(1.01);
+    transform: scale(1.03);
 }
 
 .short-card:focus {
@@ -138,20 +139,33 @@ nav .active {
 }
 
 .short-card p {
-    font-size: 20px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 1.5px;
 }
 
-.short-card-avatar {
+.short-card img {
     width: 80px;
-    height: 80px;
+    height: 85%;;
     border-radius: 50%;
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: middle;
+    border-style: solid;
+    border-color: white;
+    margin-top: 7px;
 }
 
 .link {
     text-decoration: none;
+}
+
+.dog-small-card {
+    background: #3F497F;
+    background: -webkit-linear-gradient(to right, rgba(63, 73, 127, 1), rgb(247, 192, 74));
+    background: linear-gradient(to right, rgba(63, 73, 127, 1), rgb(247, 192, 74));
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    height:100%;
+    width: 55px;
 }
 
 .full-profile-card-img-bg {
@@ -191,7 +205,7 @@ nav .active {
     }
 
     .short-card {
-        width: 100%;
+        width: 95%;
     }
 
     .full-profile-card-img-bg {
