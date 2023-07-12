@@ -7,6 +7,7 @@ import DogRegistrationForm from '../../components/Forms/DogRegistrationForm'
 import MessageForm from '../../components/Forms/MessageForm'
 import { GetDogsByOwnerId } from '../../services/DogServices'
 import { GetUserMessages } from '../../services/MessageServices'
+import SmallProfileCard from '../../components/Cards/SmallProfileCard'
 
 const HomeUser = ({ user }) => {
 
@@ -43,6 +44,8 @@ const HomeUser = ({ user }) => {
         userDogsTitle = "Your Dogs"
     }
 
+    console.log(userDogs)
+
     return id ? (
         <div className="container">
             <div className="row my-2 mt-5">
@@ -51,28 +54,11 @@ const HomeUser = ({ user }) => {
                         <div className="card-header themed-card-header">
                             <h5><span className="paws-emoji-white">🐾</span> {userDogsTitle}</h5>
                         </div>
-                        <table className="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
                                 {userDogs.map((dog, id) => (
-                                    <tr key={id}>
-                                        <td className="text-center">
-                                            <img src={dog.avatar} className="home-dog-list-avatar"/>
-                                        </td>
-                                        <td>{dog.name}</td>
-                                        <td>
-                                            <Link to=""><Trash3Fill color="red" /></Link>
-                                        </td>
-                                    </tr>
+                                    <div key="id">
+                                        <SmallProfileCard profile={dog} bg={'dog-gradient'}/>
+                                    </div>
                                 ))}
-                            </tbody>
-                        </table>
                         <hr />
                         <div className="mb-3 d-flex justify-content-center">
                             <button type="button" className="btn themed-btn" onClick={handleShowRegistration}><Plus /> Register New Dog</button>

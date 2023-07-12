@@ -22,14 +22,16 @@ const TrainerDetails = ({user}) => {
         id: user.id,
         username: user.username,
         name: user.name,
-        email: user.email
+        email: user.email,
+        type: user.accountType
     }
 
     const recipient = {
         id: profile._id,
         username: profile.username,
         name: profile.name,
-        email: profile.email
+        email: profile.email,
+        type: profile.accountType
     }
 
     return (
