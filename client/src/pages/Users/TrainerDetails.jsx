@@ -18,14 +18,26 @@ const TrainerDetails = ({user}) => {
         getTrainerProfile()
     }, [])
 
+    const sender = {
+        id: user.id,
+        username: user.username,
+        name: user.name,
+        email: user.email
+    }
 
+    const recipient = {
+        id: profile._id,
+        username: profile.username,
+        name: profile.name,
+        email: profile.email
+    }
 
     return (
         <div>
             <FullProfileCard user={user} profile={profile} title={"Trainer's information"}/>
-            <SendMessageButton sender={user} recipient={profile.username} />
+            <SendMessageButton sender={sender} recipient={recipient} />
             <div className="mt-2">
-                <RequestServiceButton trainerName={profile.name}/>
+            <RequestServiceButton sender={sender} recipient={recipient}/>
             </div>
         </div>
 
