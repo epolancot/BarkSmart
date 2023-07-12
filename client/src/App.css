@@ -180,6 +180,13 @@ nav .active {
     display: inline-block;
 }
 
+.message-list-card {
+    width: 70%;
+    margin:0 auto;
+}
+
+
+
 .gradient-custom {
     /* fallback for old browsers */
     background: #3F497F;
@@ -213,5 +220,10 @@ nav .active {
         border-bottom-left-radius: 0rem;
         border-top-right-radius: .5rem;
         border-top-left-radius: .5rem;
+    }
+
+    .message-list-card {
+        width: 100%;
+        margin:0 auto;
     }
 }

@@ -17,6 +17,7 @@ import RegisterTrainer from './pages/Trainers/RegisterTrainer'
 import HomeTrainer from './pages/Trainers/HomeTrainer'
 import TrainerDetails from './pages/Users/TrainerDetails'
 import DogDetails from './pages/Shared/DogDetails'
+import Messages from './pages/Shared/Messages'
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
               <Route path="/trainer/register" element={<RegisterTrainer setUser={setUser}/>} />
               <Route path="/trainer/id/:id" element={<TrainerDetails setUser={setUser} user={user}/>} />
               <Route path="/dog/id/:id" element={<DogDetails setUser={setUser} user={user}/>} />
+              <Route path="/messages" element={<Messages setUser={setUser} user={user}/>} />
             </Routes>
           </main>
           <footer>
