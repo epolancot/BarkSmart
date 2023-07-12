@@ -71,7 +71,7 @@ function App() {
               <Route path="/user/search/trainer" element={<SearchTrainer user={user}/>} />
               <Route path="/trainer/login" element={<LoginTrainer setUser={setUser}/>} />
               <Route path="/trainer/register" element={<RegisterTrainer setUser={setUser}/>} />
-              <Route path="/trainer/id/:id" element={<TrainerDetails setUser={setUser}/>} />
+              <Route path="/trainer/id/:id" element={<TrainerDetails setUser={setUser} user={user}/>} />
             </Routes>
           </main>
           <footer>

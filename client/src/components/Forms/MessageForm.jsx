@@ -2,9 +2,7 @@ import { useState } from 'react'
 import { SendMessage } from '../../services/MessageServices'
 
 
-const MessageForm = ({user, handleCloseMessageForm}) => {
-
-    console.log(user) 
+const MessageForm = ({user, handleCloseMessageForm, sender, recipient}) => {
     const [formValues, setFormValues] = useState({
         recipient: '',
         message: ''

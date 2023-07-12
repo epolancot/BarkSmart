@@ -1,5 +1,14 @@
 import Client from './api'
 
+export const GetTrainer = async (id) => {
+    try {
+        const res = await Client.get('profiles/trainers/id/'+id)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}
+
 export const GetTrainers = async () => {
     try {
         const res = await Client.get('profiles/trainers')

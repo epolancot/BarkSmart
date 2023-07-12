@@ -159,6 +159,13 @@ nav .active {
     border-bottom-left-radius: .5rem;
 }
 
+.full-profile-card-avatar {
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+
 .gradient-custom {
     /* fallback for old browsers */
     background: #3F497F;
