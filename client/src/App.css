@@ -158,14 +158,23 @@ nav .active {
     text-decoration: none;
 }
 
-.dog-small-card {
+.small-card {
+    height:100%;
+    width: 55px;
+}
+
+.dog-profile-bg {
     background: #3F497F;
     background: -webkit-linear-gradient(to right, rgba(63, 73, 127, 1), rgb(247, 192, 74));
     background: linear-gradient(to right, rgba(63, 73, 127, 1), rgb(247, 192, 74));
     border-top-left-radius: .5rem;
     border-bottom-left-radius: .5rem;
-    height:100%;
-    width: 55px;
+}
+
+.trainer-profile-bg {
+    background: #3F497F;
+    background: -webkit-linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(83, 145, 101));
+    background: linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(83, 145, 101))
 }
 
 .full-profile-card-img-bg {
@@ -175,6 +184,7 @@ nav .active {
 
 .full-profile-card-avatar {
     width: 150px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
     display: inline-block;
@@ -183,19 +193,6 @@ nav .active {
 .message-list-card {
     width: 70%;
     margin:0 auto;
-}
-
-
-
-.gradient-custom {
-    /* fallback for old browsers */
-    background: #3F497F;
-    
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(83, 145, 101));
-    
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(83, 145, 101))
 }
 
 @media (max-width: 768px) {

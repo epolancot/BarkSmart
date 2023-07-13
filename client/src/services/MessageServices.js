@@ -17,3 +17,12 @@ export const GetUserMessages = async (username) => {
         throw error
     }
 }
+
+export const GetMessage = async (id,user) => {
+    try {
+        const res = await Client.get(`/messages/s/${user}/${id}`)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}

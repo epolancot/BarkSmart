@@ -8,4 +8,4 @@ const Messages = ({user}) => {
         )
 }
 
-            export default Messages 
+export default Messages 

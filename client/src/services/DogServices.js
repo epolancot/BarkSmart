@@ -8,3 +8,12 @@ export const GetDogsByOwnerId = async (id) => {
         throw error
     }
 }
+
+export const GetDog = async (id) => {
+    try {
+        const res = await Client.get('/dog/'+id)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}

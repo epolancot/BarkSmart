@@ -1,5 +1,7 @@
 import { At } from 'react-bootstrap-icons'
-const ProfileCardFull = ({user, profile, title}) => {
+const ProfileCardFull = ({user, profile, title, type, css}) => {
+    let username
+    profile.username ? username = `@${profile.username}` : username = ""
     return (
         <div>
             {/* Bootstrap profile card inspired from mdBootstrap */}
@@ -8,11 +10,11 @@ const ProfileCardFull = ({user, profile, title}) => {
                     <div className="col col-lg-6 mb-4 mb-lg-0">
                         <div className="card mb-3" style={{ borderRadius: '.5rem' }}>
                             <div className="row g-0">
-                                <div className="col-md-4 gradient-custom text-center text-white full-profile-card-img-bg">
+                                <div className={`col-md-4 ${css} text-center text-white full-profile-card-img-bg`}>
                                     <img src={profile.avatar}
                                         alt="Avatar" className="img-fluid my-5 full-profile-card-avatar"/>
                                     <h4>{profile.name} {profile.lastName}</h4>
-                                    <p>@{profile.username}</p>
+                                    <p>{username}</p>
                                     <i className="far fa-edit mb-5"></i>
                                 </div>
                                 <div className="col-md-8">

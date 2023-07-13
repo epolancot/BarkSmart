@@ -12,8 +12,10 @@ const SmallMessageCard = ({user, message, css}) => {
         contact = `@${message.participants[0]}`
     }
 
+
     return (
-        <tr>
+
+        <>
             <td>
                 {arrow}
             </td>
@@ -23,7 +25,8 @@ const SmallMessageCard = ({user, message, css}) => {
             <td className="text-center">
                 <ReactTimeAgo date={message.createdAt} locale={'en-US'}/>
             </td>
-        </tr>
+        </>
+
     )
 }
 

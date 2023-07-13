@@ -20,6 +20,7 @@ const HomeUser = ({ user }) => {
         getDogs()
     }, [])
 
+
     let cardTitle = "Your Dog"
     if (profiles.length > 1) {
         cardTitle = "Your Dogs"

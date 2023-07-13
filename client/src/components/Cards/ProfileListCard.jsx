@@ -1,6 +1,13 @@
 import SmallProfileCard from './SmallProfileCard'
+import { useNavigate } from 'react-router-dom'
 
 const ProfileListCard = ({profiles, cardTitle}) => {
+    const navigate = useNavigate();
+
+    const handleClick = (id) => {
+        navigate(`/dog/id/${id}`)
+    }
+
     return (
         <div>
             <div className="card">
@@ -9,8 +16,8 @@ const ProfileListCard = ({profiles, cardTitle}) => {
                 </div>
                 <div className="mb-3 mt-3">
                 {profiles.map((profile, id) => (
-                    <div key={id} className="d-flex justify-content-center mt-1">
-                        <SmallProfileCard profile={profile} css={'dog-small-card'} />
+                    <div key={profile._id} className="d-flex justify-content-center mt-1" onClick={()=> handleClick(profile._id)}>
+                        <SmallProfileCard profile={profile} css={'small-card dog-profile-bg'} />
                     </div>
                 ))}
                 </div>

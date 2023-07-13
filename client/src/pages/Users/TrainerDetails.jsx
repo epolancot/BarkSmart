@@ -36,7 +36,13 @@ const TrainerDetails = ({user}) => {
 
     return (
         <div>
-            <FullProfileCard user={user} profile={profile} title={"Trainer's information"}/>
+            <FullProfileCard 
+                user={user}
+                profile={profile} 
+                title={`Trainer's information`}
+                type="trainer"
+                css="trainer-profile-bg"
+            />
             <SendMessageButton sender={sender} recipient={recipient} />
             <div className="mt-2">
             <RequestServiceButton sender={sender} recipient={recipient}/>

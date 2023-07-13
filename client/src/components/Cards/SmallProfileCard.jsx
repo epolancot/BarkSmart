@@ -1,4 +1,6 @@
-const SmallProfileCard = ({profile, css}) => {
+import { Link } from 'react-router-dom'
+
+const SmallProfileCard = ({profile, css}) => { 
     return (
         <div className={"row card short-card"}>
             <div className={`col-4 ${css}`}>
