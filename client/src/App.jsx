@@ -17,6 +17,7 @@ import LoginTrainer from './pages/Trainers/LoginTrainer'
 import RegisterTrainer from './pages/Trainers/RegisterTrainer'
 import HomeTrainer from './pages/Trainers/HomeTrainer'
 import Requests from './pages/Trainers/Requests'
+import RequestDetails from './pages/Trainers/RequestDetails'
 import DogDetails from './pages/Shared/DogDetails'
 import Messages from './pages/Shared/Messages'
 import MessageDetails from './pages/Shared/MessageDetails'
@@ -77,6 +78,7 @@ function App() {
               <Route path="/trainer/home" element={<HomeTrainer user={user}/>} />
               <Route path="/trainer/clients" element={<HomeTrainer user={user}/>} />
               <Route path="/trainer/requests" element={<Requests user={user}/>} />
+              <Route path="/trainer/request/id/:id" element={<RequestDetails user={user}/>} />
               <Route path="/trainer/id/:id" element={<TrainerDetails setUser={setUser} user={user}/>} />
               <Route path="/dog/id/:id" element={<DogDetails setUser={setUser} user={user}/>} />
               <Route path="/messages" element={<Messages setUser={setUser} user={user}/>} />

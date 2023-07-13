@@ -17,7 +17,7 @@ const RequestListCard = ({ user }) => {
     }, [])
 
    const handleRowClick = (id) => {
-    navigate(`/request/id/${id}`)
+    navigate(`/trainer/request/id/${id}`)
    }
     return (
         <div>

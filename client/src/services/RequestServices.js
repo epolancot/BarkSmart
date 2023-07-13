@@ -18,3 +18,13 @@ export const GetRequests = async (username) => {
     }
 }
 
+export const GetRequest = async (id) => {
+    try {
+        const res = await Client.get(`/requests/id/${id}`)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}
+
+
