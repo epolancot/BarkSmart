@@ -12,10 +12,11 @@ import LoginUser from './pages/Users/LoginUser'
 import RegisterUser from './pages/Users/RegisterUser'
 import HomeUser from './pages/Users/HomeUser'
 import SearchTrainer from './pages/Users/SearchTrainers'
+import TrainerDetails from './pages/Users/TrainerDetails'
 import LoginTrainer from './pages/Trainers/LoginTrainer'
 import RegisterTrainer from './pages/Trainers/RegisterTrainer'
 import HomeTrainer from './pages/Trainers/HomeTrainer'
-import TrainerDetails from './pages/Users/TrainerDetails'
+import Requests from './pages/Trainers/Requests'
 import DogDetails from './pages/Shared/DogDetails'
 import Messages from './pages/Shared/Messages'
 import MessageDetails from './pages/Shared/MessageDetails'
@@ -67,13 +68,15 @@ function App() {
             <Routes>
               <Route path="/" element={<Landing user={user}/>} />
               <Route path="/search-api" element={<SearchApi />} user={user} />
-              <Route path="/trainer/home" element={<HomeTrainer user={user}/>} />
               <Route path="/user/login" element={<LoginUser setUser={setUser}/>} />
               <Route path="/user/register" element={<RegisterUser setUser={setUser}/>} />
               <Route path="/user/home/:id" element={<HomeUser user={user}/>} />
               <Route path="/user/search/trainer" element={<SearchTrainer user={user}/>} />
               <Route path="/trainer/login" element={<LoginTrainer setUser={setUser}/>} />
               <Route path="/trainer/register" element={<RegisterTrainer setUser={setUser}/>} />
+              <Route path="/trainer/home" element={<HomeTrainer user={user}/>} />
+              <Route path="/trainer/clients" element={<HomeTrainer user={user}/>} />
+              <Route path="/trainer/requests" element={<Requests user={user}/>} />
               <Route path="/trainer/id/:id" element={<TrainerDetails setUser={setUser} user={user}/>} />
               <Route path="/dog/id/:id" element={<DogDetails setUser={setUser} user={user}/>} />
               <Route path="/messages" element={<Messages setUser={setUser} user={user}/>} />

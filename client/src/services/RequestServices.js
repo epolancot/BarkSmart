@@ -8,3 +8,13 @@ export const SendRequest = async (data) => {
         throw error
     }
 }
+
+export const GetRequests = async (username) => {
+    try {
+        const res = await Client.get('/requests/user/'+username)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}
+

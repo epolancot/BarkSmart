@@ -1,5 +1,6 @@
 import { BoxArrowInDownLeft, BoxArrowUpRight  } from 'react-bootstrap-icons'
 import ReactTimeAgo from 'react-time-ago'
+import moment from 'moment'
 
 
 const SmallMessageCard = ({user, message, css}) => {
@@ -23,7 +24,7 @@ const SmallMessageCard = ({user, message, css}) => {
                 {contact}
             </td>
             <td className="text-center">
-                <ReactTimeAgo date={message.createdAt} locale={'en-US'}/>
+                <ReactTimeAgo date={moment(message.createdAt).format("YYYY-MM-DD HH:mm")} locale={'en-US'}/>
             </td>
         </>
 

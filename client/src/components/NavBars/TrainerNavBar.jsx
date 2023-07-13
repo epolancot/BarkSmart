@@ -13,11 +13,18 @@ const NavBar = ({handleLogOut}) => {
                         <li className="nav-item">
                             <NavLink to="/trainer/home" className="nav-link">Home</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/search" className="nav-link">Clients</NavLink>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                View
+                            </a>
+                            <ul className="dropdown-menu">
+                                <li><Link to='/messages' className="dropdown-item">Messages</Link></li>
+                                <li><Link to='/trainer/requests' className="dropdown-item">Requests</Link></li>
+                                <li><Link to='/clients' className="dropdown-item">Clients</Link></li>
+                            </ul>
                         </li>
                         <li className="nav-item">
-                            <Link to='/trainer/login' onClick={handleLogOut} className="nav-link">Log Out</Link>
+                            <Link to='/' onClick={handleLogOut} className="nav-link">Log Out</Link>
                         </li>
                     </ul>
                 </div>

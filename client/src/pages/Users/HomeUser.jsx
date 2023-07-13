@@ -26,16 +26,14 @@ const HomeUser = ({ user }) => {
         cardTitle = "Your Dogs"
     }
 
-    return id ? (
+    return (
         <div className="container mt-5">
             <ProfileListCard profiles={profiles} cardTitle={cardTitle} />
             <div className="mt-2 center-text">
                 <RegisterNewDog modalTitle='Register New Dog' id={id} />
             </div>
         </div>
-    ) : (
-        <Unauthorized />
-    )
+    ) 
 }
 
 export default HomeUser
