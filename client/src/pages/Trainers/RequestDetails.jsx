@@ -21,7 +21,22 @@ const RequestDetails = ({ user }) => {
         GetRequestDetails()
     }, [])
 
-    console.log(request)
+    const sender = {
+        id: user.id,
+        username: user.username,
+        name: user.name,
+        email: user.email,
+        type: user.accountType
+    }
+
+    const recipient = {
+        id: request.senderId._id,
+        username: request.senderId.username,
+        name: request.senderId.name,
+        email: request.senderId.email,
+        type: request.senderId.accountType
+    }
+
     return (
         <div className="container">
             <div className="card message-list-card h-100 mt-5">
@@ -34,6 +49,9 @@ const RequestDetails = ({ user }) => {
                     <div className="message-details-footer text-center">
                         <p><i> Received <ReactTimeAgo date={moment(request.createdAt).format("YYYY-MM-DD HH:mm")} locale={'en-US'} /></i></p>
                     </div>
+                </div>
+                <div>
+                    <SendMessageButton sender={sender} recipient={recipient}/>
                 </div>
             </div>
         </div>
