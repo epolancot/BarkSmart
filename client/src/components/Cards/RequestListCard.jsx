@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { GetRequests } from '../../services/RequestServices'
 import { PersonFillAdd } from 'react-bootstrap-icons'
 import { useNavigate } from 'react-router-dom'
+import TableRowRequest from '../TableRowRequest'
 
 const RequestListCard = ({ user }) => {
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ const RequestListCard = ({ user }) => {
 
     useEffect(() => {
         const getMessages = async () => {
-            const response = await GetRequests(user.id)
+            const response = await GetRequests(user.username)
             setRequests(response)
         }
         getMessages()

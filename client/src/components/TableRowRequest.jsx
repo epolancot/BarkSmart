@@ -2,12 +2,12 @@ import ReactTimeAgo from 'react-time-ago'
 import moment from 'moment'
 
 const TableRowRequest = ({user, request, css}) => {
-    const message = request.substring(0,10) + '...'
+    const message = request.message.substring(0,10) + '...'
     return (
 
         <>
             <td>
-                {request.senderName}
+                <b>{request.senderName}</b>
             </td>
             <td>
                 {message}

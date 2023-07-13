@@ -24,7 +24,7 @@ const RequestServiceButton = ({sender, recipient}) => {
                     <Modal.Title>Request Quote Form</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <RequestForm sender={sender} recipient={recipient}/>
+                    <RequestForm sender={sender} recipient={recipient} handleCloseRequestForm={handleCloseRequestForm}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleCloseRequestForm}>
