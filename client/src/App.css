@@ -7,6 +7,11 @@
     color: white !important;
 }
 
+.themed-background a:hover {
+    background-color: #25306f;
+    color: white !important;
+}
+
 .themed-btn {
     background-color: #3F497F;
     color: white !important;
@@ -192,6 +197,11 @@ nav .active {
     font-weight: bold;
 }
 
+.user-profile-bg h5 {
+    color: #3F497F;
+    font-weight: bold;
+}
+
 .user-profile-bg button {
     width: 90%;
     font-size: 0.7em;
@@ -208,6 +218,20 @@ nav .active {
     border-radius: 50%;
     overflow: hidden;
     display: inline-block;
+}
+
+.full-profile-card-avatar:hover{
+    cursor: pointer;
+}
+
+.profile-image-text {
+    position: absolute;
+    margin-top: 95px;
+    color: white;
+}
+
+.profile-image-text:hover {
+    cursor: pointer;
 }
 
 .message-list-card {

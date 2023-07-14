@@ -1,6 +1,7 @@
 import { At } from 'react-bootstrap-icons'
 import ProfileCardBody from '../Sections/ProfileCardBody'
 import ChangeProfilePictureBtn from '../Buttons/ChangeProfilePictureBtn'
+import ChangeProfilePictureForm from '../Forms/ChangeProfilePictureForm'
 
 
 const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
@@ -33,10 +34,10 @@ const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
                         <div className="card mb-3" style={{ borderRadius: '.5rem' }}>
                             <div className="row g-0">
                                 <div className={`col-md-4 ${css} text-center text-white full-profile-card-side-bar`}>
-                                    <img src={profile.avatar}
-                                        alt="Avatar" className="img-fluid my-4 full-profile-card-avatar"/>
-                                        {changeProfilePictureBtn}
-                                    <h4>{profile.name} {profile.lastName}</h4>
+                                    {/* <img src={profile.avatar}
+                                        alt="Avatar" className="img-fluid my-4 full-profile-card-avatar"/> */}
+                                    <ChangeProfilePictureForm profileAvatar={profile.avatar}/>
+                                    <h5>{profile.name} {profile.lastName}</h5>
                                     <p>{username}</p>
                                     <i className="far fa-edit mb-5"></i>
                                 </div>
