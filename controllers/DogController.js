@@ -19,6 +19,24 @@ const GetDog = async (req, res) => {
     }
 }
 
+const AddPhoto = async (req, res) => {
+    try {
+        const dog = await Dog.findById(req.params.dog_id)
+        res.send(dog)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+    }
+}
+
+const GetDogByOwnerId = async (req, res) => {
+    try {
+        const dogs = await Dog.find({ owner: req.params.owner_id })
+        res.send(dogs)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+    }
+}
+
 const CreateDog = async (req, res) => {
     try {
         const dog = await Dog.create({ ...req.body })
@@ -49,6 +67,8 @@ const DeleteDog = async (req, res) => {
 module.exports = {
     GetAll,
     GetDog,
+    GetDogByOwnerId,
+    AddPhoto,
     CreateDog,
     UpdateDog,
     DeleteDog

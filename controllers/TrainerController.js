@@ -13,7 +13,9 @@ const Login = async (req, res) => {
         if (matched) {
             let payload = {
                 id: user.id,
-                email: user.email
+                email: user.email,
+                accountType: user.accountType,
+                username: user.username
             }
             let token = middleware.createToken(payload)
             return res.send({ user: payload, token })
@@ -43,8 +45,62 @@ const Register = async (req, res) => {
 
 const GetAll = async (req, res) => {
     try {
-        const trainers = await Trainer.find({})
+        const trainers = await Trainer.find(
+            {}, 
+            {
+                _id:1,   
+                username:1,
+                name:1,
+                lastName:1,
+                avatar:1,
+                email:1,
+                bio:1,
+                experience:1,
+                zipCodes:1,
+                rating:1,
+            })
         res.send(trainers)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+    }
+}
+
+const GetByQuery = async (req, res) => {
+    try {
+        const profile = await Trainer.find(
+            {$or: [ { name: req.params.query},
+                    { lastName: req.params.query},
+                    { username: req.params.query}
+            ]},
+            {
+                _id:1,
+                username:1,
+                name:1,
+                lastName:1,
+                avatar:1,
+                rating:1,
+                zipCodes:1
+            })
+        res.send(profile)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+    }
+}
+
+const GetByZipCode = async (req, res) => {
+    try {
+        const profile = await Trainer.find(
+                        {zipCodes: req.params.zip},
+                        {
+                            _id:1,
+                            username:1,
+                            name:1,
+                            lastName:1,
+                            avatar:1,
+                            rating:1,
+                            zipCodes:1
+                        })
+        res.send(profile)
     } catch (error) {
         res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
     }
@@ -72,5 +128,7 @@ module.exports = {
     Register,
     GetAll,
     GetProfile,
+    GetByQuery,
+    GetByZipCode,
     UpdateProfile
 }

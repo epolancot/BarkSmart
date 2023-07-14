@@ -24,7 +24,15 @@ const userSchema = new Schema(
     dogs: [{
       type: Schema.Types.ObjectId,
       ref: 'Dog'
-    }]
+    }],
+    messages: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Message'
+    }],
+    accountType: { 
+      type: String,
+      default: "user"
+    }
   },
   { timestamps: true }
 )

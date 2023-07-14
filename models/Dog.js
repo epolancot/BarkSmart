@@ -7,19 +7,20 @@ const dogSchema = new Schema(
             required: true
         },
         avatar: {
-            type: String
+            type: String,
+            default: 'https://i.imgur.com/UEKW2rz.png'
         },
         breed: {
             type: String
         },
-        age: {
-            type: String
+        dob: {
+            type: Date
         },
         weight: {
-            type: Number
+            type: String
         },
         height: {
-            type: Number
+            type: String
         },
         comments: [{
             by: {
@@ -42,7 +43,7 @@ const dogSchema = new Schema(
         trainer: {
             type: Schema.Types.ObjectId,
             ref: 'Trainer',
-        },
+        }
     },
     { timestamps: true }
 )

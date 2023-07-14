@@ -4,28 +4,31 @@ const messageSchema = new Schema(
     {
         status: { 
             type: String, 
-            required: true 
         },
-        sender: { 
+        senderId: { 
             type: String, 
-            required: true 
+        },
+        senderName: {
+            type: String,
         },
         senderType: { 
             type: String, 
-            required: true 
         },
-        recipient: { 
+        recipientId: {
+            type: String,
+        },
+        recipientName: { 
             type: String, 
-            required: true 
         },
         recipientType: { 
             type: String, 
-            required: true 
         },
         body: { 
             type: String, 
             required: true 
-        }
+        },
+        participants: [{type: String}]
+        
     },
     { timestamps: true }
 )

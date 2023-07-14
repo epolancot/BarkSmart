@@ -4,26 +4,31 @@ const requestSchema = new Schema(
   {
     status: { 
       type: String, 
-      required: true 
+      default: 'pending'
     },
-    user: { 
+    senderId: { 
       type: Schema.Types.ObjectId,
       ref: 'User',
-      required: true 
     },
-    trainer: { 
+    senderName: {
+      type: String,
+    },
+    recipientId: { 
       type: Schema.Types.ObjectId,
       ref: 'Trainer',
-      required: true 
     },
-    dog: { 
-      type: Schema.Types.ObjectId,
-      ref: 'Dog',
-      required: true 
+    recipientName: {
+      type: String,
+    },
+    phone: {
+      type: String
     },
     message: { 
       type: String, 
-    }
+    },
+    participants: [{
+      type: String
+    }]
   },
   { timestamps: true }
 )

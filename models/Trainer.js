@@ -36,11 +36,15 @@ const trainerSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'Message'
         }],
-        zipCodes: {
+        zipCodes: [{
             type: Number
-        },
+        }],
         rating: {
             type: Number
+        },
+        accountType: { 
+            type: String,
+            default: "trainer"
         }
     },
     { timestamps: true }

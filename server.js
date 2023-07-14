@@ -1,12 +1,15 @@
+const fileUpload = require("express-fileupload");
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
+
 
 const AuthRouter = require('./routes/AuthRouter')
 const ProfileRouter = require('./routes/ProfileRouter')
 const RequestRouter = require('./routes/RequestRouter')
 const DogRouter = require('./routes/DogRouter')
 const MessageRouter = require('./routes/MessageRouter')
+const PictureRouter = require('./routes/PictureRouter')
 
 
 const PORT = process.env.PORT || 3001
@@ -25,10 +28,7 @@ app.use('/dog', DogRouter)
 app.use('/profiles', ProfileRouter)
 app.use('/requests', RequestRouter)
 app.use('/messages', MessageRouter)
-
-app.use('/', (req, res) => {
-  res.send(`Connected!`)
-})
+app.use('/pictures', PictureRouter)
 
 app.listen(PORT, () => {
   console.log(`Running Express server on Port ${PORT} . . .`)

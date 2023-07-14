@@ -1,7 +1,9 @@
+import Upload from '../../components/Upload'
+
 const Landing = () => {
     return (
         <div className="container">
-            Hello
+            <Upload/>
         </div>
     )
 }

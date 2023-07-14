@@ -1,18 +1,19 @@
 const { Request } = require('../models')
 
 
-const GetRequests = async (req, res) => {
+const GetRequests= async (req, res) => {
   try {
-    const requests = await Request.find({})
-    res.send(requests)
+      const requests = await Request.find({ participants: req.params.username })
+      res.send(requests)
   } catch (error) {
-    throw error
+      res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
   }
 }
 
 const GetRequest = async (req, res) => {
   try {
-      const request = await Request.findById(req.params.request_id)
+      const request = await Request.findById(req.params.request_id).populate("senderId")
+
       res.send(request)
   } catch (error) {
       res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })

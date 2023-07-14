@@ -1,6 +1,11 @@
 const { User } = require('../models')
 const middleware = require('../middleware')
 
+const CheckSession = async (req, res) => {
+  const { payload } = res.locals
+  res.send(payload)
+}
+
 const Login = async (req, res) => {
   try {
     const { username, password } = req.body
@@ -13,7 +18,12 @@ const Login = async (req, res) => {
     if (matched) {
       let payload = {
         id: user.id,
-        email: user.email
+        name: user.name,
+        lastName: user.lastName,
+        username: user.username,
+        email: user.email,
+        accountType: user.accountType,
+        dogs: user.dogs,
       }
       let token = middleware.createToken(payload)
       return res.send({ user: payload, token })
@@ -70,9 +80,10 @@ const UpdateProfile = async (req, res) => {
 
 
 module.exports = {
+  CheckSession,
   Login,
   Register,
   GetAll,
   GetProfile,
-  UpdateProfile
+  UpdateProfile,
 }
