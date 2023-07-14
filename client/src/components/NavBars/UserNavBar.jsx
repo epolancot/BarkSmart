@@ -13,9 +13,6 @@ const UserNavBar = ({ handleLogOut, user }) => {
                         <li className="nav-item">
                             <NavLink to={`/user/home/${user.id}`} className="nav-link">Home</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to={`/messages`} className="nav-link">Messages</NavLink>
-                        </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Search
@@ -26,7 +23,16 @@ const UserNavBar = ({ handleLogOut, user }) => {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <Link to='/user/login' onClick={handleLogOut} className="nav-link">Log Out</Link>
+                            <NavLink to={`/messages`} className="nav-link">Messages</NavLink>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profile
+                            </a>
+                            <ul className="dropdown-menu dropdown-menu-end">
+                                <li><Link to='/profile/view' className="dropdown-item">View</Link></li>
+                                <li><Link to='/user/login' onClick={handleLogOut} className="dropdown-item">Log Out</Link></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
