@@ -1,29 +1,33 @@
 import { Button, Modal } from "react-bootstrap"
 import UploadFile from '../Forms/UploadFile'
 import { useState } from "react"
-import { Image } from 'react-bootstrap-icons'
+import { Tools } from 'react-bootstrap-icons'
 
 
-const ChangeProfilePicture = ({ user, modalTitle }) => {
+const ChangeProfilePictureBtn = ({ user, profileId, profileType, modalTitle, profileAvatar, canEdit}) => {
     const [showUploadFileForm, setShowUploadFileForm] = useState(false);
-
-    const profileId = "64a83b4f644026d54c63f174"
-    const profileType = "dog"
     const formTitle = 'Select Picture'
 
     const handleCloseUploadFileForm = () => setShowUploadFileForm(false);
     const handleShowUploadFileForm = () => setShowUploadFileForm(true);
 
+    let showToolIcon
+    if (canEdit) {
+        showToolIcon = <Tools 
+                            className="profile-image-tool-icon"
+                            onClick={handleShowUploadFileForm}
+                        />
+    }
 
     return (
         <div>
             <div className="mb-3 d-flex justify-content-center">
-                <button 
-                    type="button" 
-                    className="btn themed-btn" 
-                    onClick={handleShowUploadFileForm}>
-                        <Image /> Change Picture
-                </button>
+            {showToolIcon}
+            <img src={profileAvatar}
+                alt="Avatar" 
+                className="img-fluid my-4 full-profile-card-avatar"
+                onClick={handleShowUploadFileForm}
+            />
             </div>
             <Modal show={showUploadFileForm} onHide={handleCloseUploadFileForm}>
                 <Modal.Header closeButton>
@@ -47,4 +51,4 @@ const ChangeProfilePicture = ({ user, modalTitle }) => {
     )
 }
 
-export default ChangeProfilePicture
+export default ChangeProfilePictureBtn

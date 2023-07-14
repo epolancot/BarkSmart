@@ -224,13 +224,13 @@ nav .active {
     cursor: pointer;
 }
 
-.profile-image-text {
+.profile-image-tool-icon {
     position: absolute;
-    margin-top: 95px;
+    margin-top: 100px;
     color: white;
 }
 
-.profile-image-text:hover {
+.profile-image-tool-icon:hover {
     cursor: pointer;
 }
 
@@ -241,7 +241,9 @@ nav .active {
 
 .upload-picture-input input {
     border-style: solid;
-    border-radius: 10px;;
+    border-radius: 3px;;
+    width: 95%;
+    overflow: hidden;
 }
 
 .upload-picture-input input::file-selector-button {

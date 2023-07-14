@@ -11,7 +11,11 @@ const LandingNavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarToggler">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink to="/user/login" className="nav-link">Log In</NavLink>
+                            <NavLink to="/user/login" className="nav-link">
+                                <span data-bs-toggle="collapse" data-bs-target="#navbarToggler" >
+                                    Log In
+                                </span>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/user/register" className="nav-link">Sign up</NavLink>

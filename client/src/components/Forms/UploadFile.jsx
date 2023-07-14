@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import Client from '../../services/api'
+import { useNavigate } from 'react-router-dom'
 
 const UploadFile = ({ profileType, profileId, handleCloseUploadFileForm}) => {
+    const navigate = useNavigate()
+
     const [file, setFile] = useState()
 
     const handleSubmit = async event => {
@@ -17,11 +20,14 @@ const UploadFile = ({ profileType, profileId, handleCloseUploadFileForm}) => {
                 "Content-Type": "multipart/form-data",
             }
         })
-        handleCloseUploadFileForm()
+        navigate(`/profile/view/${profileId}`)
+        handleCloseUploadFileForm()   
     }
 
     return (
         <form onSubmit={handleSubmit}>
+            <div className="text-center">
+            </div>
             <div className="text-center mt-3 upload-picture-input">
                 <input 
                     onChange={e => setFile(e.target.files[0])} 

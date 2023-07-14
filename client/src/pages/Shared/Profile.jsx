@@ -9,7 +9,6 @@ const Profile = ({ user }) => {
 
     const title = ''
     const type = user.accountType
-    
     const css = ''
 
     useEffect(() => {
@@ -33,7 +32,7 @@ const Profile = ({ user }) => {
                 profile={profile} 
                 title={title}
                 type={type} 
-                canEdit={canEdit} 
+                canEdit={canEdit}
             />
         </div>
     )

@@ -3,7 +3,7 @@ import ChangeProfilePicture from '../../components/Buttons/ChangeProfilePictureB
 const Landing = ({user}) => {
     return (
         <div className="container">
-            <ChangeProfilePicture user={user} modalTitle={'Change Profile Picture'}/>
+
         </div>
     )
 }
