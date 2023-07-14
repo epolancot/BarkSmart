@@ -195,6 +195,23 @@ nav .active {
     margin:0 auto;
 }
 
+.upload-picture-input input {
+    border-style: solid;
+    border-radius: 10px;;
+}
+
+.upload-picture-input input::file-selector-button {
+    background-color: #3F497F;
+    color: white !important;
+    border: none;
+}
+
+.upload-picture-input input::file-selector-button:hover {
+    background-color: #25306f;
+    color: white !important;
+    border: none;
+}
+
 @media (max-width: 768px) {
     .api-search-results-grid {
         grid-template-columns: repeat(2, minmax(300px, 1fr));

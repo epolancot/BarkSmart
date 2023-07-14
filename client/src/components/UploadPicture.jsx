@@ -8,7 +8,7 @@ const UploadPicture = ({ profileType, profileId }) => {
         event.preventDefault()
 
         const formData = new FormData();
-        formData.append("pictureUrl", file)
+        formData.append("pictureUrl", file, profileId)
         formData.append("profileType", profileType)
         formData.append("profileId", profileId)
 
@@ -23,13 +23,13 @@ const UploadPicture = ({ profileType, profileId }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="text-center">
-                <h4>Select profile picture</h4>
+                <h4>Change profile picture</h4>
             </div>
-            <div className="text-center mt-3">
+            <div className="text-center mt-3 upload-picture-input">
                 <input onChange={e => setFile(e.target.files[0])} type="file" accept="image/*"/>
             </div>
-            <div className="text-center mt-2">
-            <button type="submit" className="themed-btn">Submit</button>
+            <div className="text-center mt-4">
+            <button type="submit" className="btn themed-btn">Upload</button>
             </div>
         </form>
     )
