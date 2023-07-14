@@ -26,7 +26,7 @@ const s3 = new Aws.S3({
 })
 
 router.post('/s3', 
-    upload.single('url'), (req, res) => {
+    upload.single('pictureUrl'), (req, res) => {
         const params = {
             Bucket:process.env.AWS_BUCKET_NAME, 
             Key:req.file.originalname, 
@@ -39,6 +39,7 @@ router.post('/s3',
             if(error){
                 res.status(500).send({"err":error}) 
             }
+            console.log(req.body)
             const picture = new Picture({
                 profileType: req.body.profileType,
                 profileId: req.body.profileId,
