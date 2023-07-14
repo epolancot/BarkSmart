@@ -40,7 +40,6 @@ const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
 
     return (
         <div>
-            <Upload />
             <form className="mx-1 mx-md-4" onSubmit={handleSubmit}>
                 <div className="d-flex flex-row align-items-center mb-4">
                     <div className="form-outline flex-fill mb-0">

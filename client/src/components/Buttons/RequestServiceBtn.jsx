@@ -1,6 +1,6 @@
 import { Button, Modal } from "react-bootstrap"
 import { PersonAdd } from 'react-bootstrap-icons'
-import RequestForm from '../../components/Forms/RequestForm'
+import RequestForm from '../Forms/RequestForm'
 import { useState, useEffect } from "react"
 
 const RequestServiceButton = ({sender, recipient}) => {

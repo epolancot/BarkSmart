@@ -63,7 +63,7 @@ const UserNavBar = ({ handleLogOut, user }) => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/user/login' onClick={handleLogOut} className="dropdown-item">
+                                    <Link to='/' onClick={handleLogOut} className="dropdown-item">
                                         Log Out
                                     </Link>
                                 </li>

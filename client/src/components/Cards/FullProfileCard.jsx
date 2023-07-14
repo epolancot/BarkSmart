@@ -1,7 +1,6 @@
 import { At } from 'react-bootstrap-icons'
 import ProfileCardBody from '../Sections/ProfileCardBody'
-import EditProfileBtn from '../Buttons/EditProfileBtn'
-import ChangeProfilePictureBtn from '../Buttons/ChangeProfilePicture'
+import ChangeProfilePictureBtn from '../Buttons/ChangeProfilePictureBtn'
 
 
 const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
@@ -18,9 +17,8 @@ const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
             break
     }
 
-    let editProfileBtn, changeProfilePictureBtn
+    let changeProfilePictureBtn
     if (canEdit) {
-        editProfileBtn = <EditProfileBtn />
         changeProfilePictureBtn = <ChangeProfilePictureBtn />
     }
 
@@ -44,7 +42,14 @@ const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body p-4">
-                                        <ProfileCardBody title={title} profile={profile} type={type} />
+                                        <div className="edit-profile-btn">
+                                        </div>
+                                        <ProfileCardBody 
+                                            title={title} 
+                                            profile={profile} 
+                                            type={type} 
+                                            canEdit={canEdit} 
+                                        />
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 import { Button, Modal } from "react-bootstrap"
-import UploadFile from '../../components/Forms/UploadFile'
+import UploadFile from '../Forms/UploadFile'
 import { useState } from "react"
 import { Image } from 'react-bootstrap-icons'
 

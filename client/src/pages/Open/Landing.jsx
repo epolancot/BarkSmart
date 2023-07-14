@@ -1,4 +1,4 @@
-import ChangeProfilePicture from '../../components/Buttons/ChangeProfilePicture'
+import ChangeProfilePicture from '../../components/Buttons/ChangeProfilePictureBtn'
 
 const Landing = ({user}) => {
     return (

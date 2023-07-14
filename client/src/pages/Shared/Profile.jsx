@@ -9,6 +9,7 @@ const Profile = ({ user }) => {
 
     const title = ''
     const type = user.accountType
+    
     const css = ''
 
     useEffect(() => {

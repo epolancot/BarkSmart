@@ -1,5 +1,5 @@
 import { Button, Modal } from "react-bootstrap"
-import DogRegistrationForm from '../../components/Forms/DogRegistrationForm'
+import DogRegistrationForm from '../Forms/DogRegistrationForm'
 import React, { useState, useEffect } from "react"
 import { Plus } from 'react-bootstrap-icons'
 

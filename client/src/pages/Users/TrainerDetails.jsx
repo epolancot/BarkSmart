@@ -2,8 +2,8 @@ import FullProfileCard from '../../components/Cards/FullProfileCard'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { GetTrainer } from '../../services/TrainerServices'
-import RequestServiceButton from '../../components/Buttons/RequestServiceButton'
-import SendMessageButton from '../../components/Buttons/SendMessageButton'
+import RequestServiceButton from '../../components/Buttons/RequestServiceBtn'
+import SendMessageButton from '../../components/Buttons/SendMessageBtn'
 
 const TrainerDetails = ({user}) => {
     const [profile, setProfile] = useState('')

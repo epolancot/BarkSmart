@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react"
 import MessageForm from '../../components/Forms/MessageForm'
 import { GetDogsByOwnerId } from '../../services/DogServices'
 import ProfileListCard from '../../components/Cards/ProfileListCard'
-import RegisterNewDog from '../../components/Buttons/RegisterNewDog'
+import RegisterNewDog from '../../components/Buttons/RegisterNewDogBtn'
 
 const HomeUser = ({ user }) => {
 

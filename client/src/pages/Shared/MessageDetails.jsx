@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import moment from 'moment'
 import ReactTimeAgo from 'react-time-ago'
-import SendMessageButton from '../../components/Buttons/SendMessageButton'
+import SendMessageButton from '../../components/Buttons/SendMessageBtn'
 
 
 
