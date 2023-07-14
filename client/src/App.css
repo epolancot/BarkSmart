@@ -3,6 +3,10 @@
     color: white !important;
 }
 
+.themed-background a {
+    color: white !important;
+}
+
 .themed-btn {
     background-color: #3F497F;
     color: white !important;

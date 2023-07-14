@@ -28,7 +28,7 @@ const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
     profile.username ? username = `@${profile.username}` : username = ""
     return (
         <div>
-            {/* Bootstrap profile card inspired from mdBootstrap */}
+            {/* Bootstrap profile card inspired by mdBootstrap */}
             <div className="container mt-5 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col col-lg-6 mb-4 mb-lg-0">
