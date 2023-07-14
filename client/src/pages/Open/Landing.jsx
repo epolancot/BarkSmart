@@ -1,9 +1,9 @@
-import UploadPicture from '../../components/UploadPicture'
+import ChangeProfilePicture from '../../components/Buttons/ChangeProfilePicture'
 
-const Landing = () => {
+const Landing = ({user}) => {
     return (
         <div className="container">
-            <UploadPicture profileId={"64a83b4f644026d54c63f174"} profileType="dog"/>
+            <ChangeProfilePicture user={user} modalTitle={'Change Profile Picture'}/>
         </div>
     )
 }

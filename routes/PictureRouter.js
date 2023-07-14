@@ -36,7 +36,7 @@ router.post('/s3',
             ContentType:"image/jpeg"    
         }
         s3.upload(params,(error,data)=>{
-            if(error){
+            if(error){  
                 res.status(500).send({"err":error}) 
             }
             console.log(req.body)
