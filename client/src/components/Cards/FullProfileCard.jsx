@@ -1,7 +1,29 @@
 import { At } from 'react-bootstrap-icons'
 import ProfileCardBody from '../Sections/ProfileCardBody'
+import EditProfileBtn from '../Buttons/EditProfileBtn'
+import ChangeProfilePictureBtn from '../Buttons/ChangeProfilePicture'
 
-const ProfileCardFull = ({user, profile, title, type, css}) => {
+
+const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
+    let css
+    switch (type) {
+        case "user":
+            css="user-profile-bg"
+            break
+        case "trainer":
+            css="trainer-profile-bg"
+            break
+        case "dog":
+            css="dog-profile-bg"
+            break
+    }
+
+    let editProfileBtn, changeProfilePictureBtn
+    if (canEdit) {
+        editProfileBtn = <EditProfileBtn />
+        changeProfilePictureBtn = <ChangeProfilePictureBtn />
+    }
+
     let username
     profile.username ? username = `@${profile.username}` : username = ""
     return (
@@ -12,9 +34,10 @@ const ProfileCardFull = ({user, profile, title, type, css}) => {
                     <div className="col col-lg-6 mb-4 mb-lg-0">
                         <div className="card mb-3" style={{ borderRadius: '.5rem' }}>
                             <div className="row g-0">
-                                <div className={`col-md-4 ${css} text-center text-white full-profile-card-img-bg`}>
+                                <div className={`col-md-4 ${css} text-center text-white full-profile-card-side-bar`}>
                                     <img src={profile.avatar}
-                                        alt="Avatar" className="img-fluid my-5 full-profile-card-avatar"/>
+                                        alt="Avatar" className="img-fluid my-4 full-profile-card-avatar"/>
+                                        {changeProfilePictureBtn}
                                     <h4>{profile.name} {profile.lastName}</h4>
                                     <p>{username}</p>
                                     <i className="far fa-edit mb-5"></i>

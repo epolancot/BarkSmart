@@ -30,7 +30,7 @@ const UserNavBar = ({ handleLogOut, user }) => {
                                 Profile
                             </a>
                             <ul className="dropdown-menu dropdown-menu-end">
-                                <li><Link to='/profile/view' className="dropdown-item">View</Link></li>
+                                <li><Link to={`/profile/view/${user.id}`} className="dropdown-item">My Profile</Link></li>
                                 <li><Link to='/user/login' onClick={handleLogOut} className="dropdown-item">Log Out</Link></li>
                             </ul>
                         </li>

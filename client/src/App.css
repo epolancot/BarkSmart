@@ -174,17 +174,33 @@ nav .active {
 .trainer-profile-bg {
     background: #3F497F;
     background: -webkit-linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(83, 145, 101));
-    background: linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(83, 145, 101))
+    background: linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(83, 145, 101));
 }
 
-.full-profile-card-img-bg {
+.user-profile-bg {
+    background: #3F497F;
+    background: -webkit-linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(248, 245, 228));
+    background: linear-gradient(to right bottom, rgba(63, 73, 127, 1), rgb(248, 245, 228));
+}
+
+.user-profile-bg p {
+    color: #3F497F;
+    font-weight: bold;
+}
+
+.user-profile-bg button {
+    width: 90%;
+    font-size: 0.7em;
+}
+
+.full-profile-card-side-bar {
     border-top-left-radius: .5rem;
     border-bottom-left-radius: .5rem;
 }
 
 .full-profile-card-avatar {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
     display: inline-block;
@@ -217,6 +233,18 @@ nav .active {
         grid-template-columns: repeat(2, minmax(300px, 1fr));
         grid-gap: 15px;
     }
+
+    .full-profile-card-side-bar {
+        border-top-left-radius: 0rem;
+        border-bottom-left-radius: 0rem;
+        border-top-right-radius: .5rem;
+        border-top-left-radius: .5rem;
+    }
+
+    .full-profile-card-side-bar button {
+        width: 40%;
+        font-size: 0.9em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -229,11 +257,16 @@ nav .active {
         width: 95%;
     }
 
-    .full-profile-card-img-bg {
+    .full-profile-card-side-bar {
         border-top-left-radius: 0rem;
         border-bottom-left-radius: 0rem;
         border-top-right-radius: .5rem;
         border-top-left-radius: .5rem;
+    }
+
+    .full-profile-card-side-bar button {
+        width: 60%;
+        font-size: 0.8em;
     }
 
     .message-list-card {

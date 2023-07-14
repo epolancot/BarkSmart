@@ -13,7 +13,8 @@ const trainerSchema = new Schema(
             type: String,
         },
         avatar: {
-            type: String
+            type: String,
+            default: 'https://i.imgur.com/ixuv8kb.png'
         },
         email: {
             type: String,

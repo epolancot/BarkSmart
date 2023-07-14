@@ -21,6 +21,7 @@ import RequestDetails from './pages/Trainers/RequestDetails'
 import DogDetails from './pages/Shared/DogDetails'
 import Messages from './pages/Shared/Messages'
 import MessageDetails from './pages/Shared/MessageDetails'
+import Profile from './pages/Shared/Profile'
 
 
 function App() {
@@ -83,6 +84,7 @@ function App() {
               <Route path="/dog/id/:id" element={<DogDetails setUser={setUser} user={user}/>} />
               <Route path="/messages" element={<Messages setUser={setUser} user={user}/>} />
               <Route path="/messages/id/:id" element={<MessageDetails setUser={setUser} user={user}/>} />
+              <Route path="/profile/view/:id" element={<Profile user={user}/>} />
             </Routes>
           </main>
           <footer>

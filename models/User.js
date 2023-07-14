@@ -16,7 +16,8 @@ const userSchema = new Schema(
       type: String
     },
     avatar: { 
-      type: String
+      type: String,
+      default: 'https://i.imgur.com/NkxehCJ.png'
     },
     passwordDigest: { 
       type: String 

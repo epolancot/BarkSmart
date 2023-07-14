@@ -8,7 +8,7 @@ const dogSchema = new Schema(
         },
         avatar: {
             type: String,
-            default: 'https://i.imgur.com/UEKW2rz.png'
+            default: 'https://i.imgur.com/N3Jp11y.png'
         },
         breed: {
             type: String
