@@ -1,7 +1,8 @@
-import { Button, Modal } from "react-bootstrap"
 import UploadFile from '../Forms/UploadFile'
-import { useState } from "react"
+import { Button, Modal } from "react-bootstrap"
 import { Tools } from 'react-bootstrap-icons'
+import { useState } from "react"
+
 
 
 const ChangeProfilePictureBtn = ({ user, profileId, profileType, modalTitle, profileAvatar, canEdit}) => {

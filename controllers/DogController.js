@@ -1,4 +1,5 @@
 const { Dog } = require('../models')
+const { User } = require('../models')
 
 
 const GetAll = async (req, res) => {
@@ -19,15 +20,6 @@ const GetDog = async (req, res) => {
     }
 }
 
-const AddPhoto = async (req, res) => {
-    try {
-        const dog = await Dog.findById(req.params.dog_id)
-        res.send(dog)
-    } catch (error) {
-        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
-    }
-}
-
 const GetDogByOwnerId = async (req, res) => {
     try {
         const dogs = await Dog.find({ owner: req.params.owner_id })
@@ -40,6 +32,9 @@ const GetDogByOwnerId = async (req, res) => {
 const CreateDog = async (req, res) => {
     try {
         const dog = await Dog.create({ ...req.body })
+        const user = await User.findById(dog.owner)
+        user.dogs.push(dog._id)
+        user.save()
         res.send(dog)
     } catch (error) {
         throw error
@@ -68,7 +63,6 @@ module.exports = {
     GetAll,
     GetDog,
     GetDogByOwnerId,
-    AddPhoto,
     CreateDog,
     UpdateDog,
     DeleteDog

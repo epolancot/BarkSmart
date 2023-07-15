@@ -12,12 +12,12 @@ const Profile = ({ user }) => {
     const css = ''
 
     useEffect(() => {
-        const getTrainerProfile = async () => {
+        const getProfileDetails = async () => {
             const response = await GetProfile(id, user.accountType)
             setProfile(response)
         }
 
-        getTrainerProfile()
+        getProfileDetails()
     }, [])
 
     let canEdit
@@ -33,6 +33,7 @@ const Profile = ({ user }) => {
                 title={title}
                 type={type} 
                 canEdit={canEdit}
+                dogs={(profile.dogs) ? profile.dogs : ""}
             />
         </div>
     )

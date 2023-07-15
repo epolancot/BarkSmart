@@ -62,7 +62,7 @@ const GetAll = async (req, res) => {
 
 const GetProfile = async (req, res) => {
   try {
-    const profile = await User.findById(req.params.user_id)
+    const profile = await User.findById(req.params.user_id).populate("dogs")
     res.send(profile)
   } catch (error) {
     res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { RegisterDog } from '../../services/Auth'
+import { updateUser } from '../../services/ProfileServices'
 
 
 const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
@@ -114,7 +115,7 @@ const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button
                         type="submit"
-                        className="btn btn-primary btn-lg"
+                        className="btn themed-btn"
                         disabled={!formValues.name ||
                             !formValues.breed ||
                             !formValues.age

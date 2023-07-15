@@ -10,7 +10,7 @@ const ProfileListCard = ({profiles, cardTitle}) => {
 
     return (
         <div>
-            <div className="card">
+            <div className="card profile-list-card">
                 <div className="card-header themed-card-header">
                     <h5><span className="paws-emoji-white">🐾</span> {cardTitle}</h5>
                 </div>

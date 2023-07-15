@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react"
-import { GetUserMessages } from '../../services/MessageServices'
 import { ChatLeftText } from 'react-bootstrap-icons'
+import { GetUserMessages } from '../../services/MessageServices'
 import TableRowMessage from '../TableRowMessage'
 import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from "react"
 
 const MessageListCard = ({ user }) => {
     const navigate = useNavigate();
@@ -16,9 +16,9 @@ const MessageListCard = ({ user }) => {
         getMessages()
     }, [])
 
-   const handleRowClick = (id) => {
-    navigate(`/messages/id/${id}`)
-   }
+    const handleRowClick = (id) => {
+        navigate(`/messages/id/${id}`)
+    }
     return (
         <div>
             <div className="card message-list-card h-100">
@@ -36,16 +36,16 @@ const MessageListCard = ({ user }) => {
                         </thead>
                         <tbody>
                             {userMessages.map((message) => (
-                                    <tr onClick={()=> handleRowClick(message._id)}>
-                                        <TableRowMessage message={message} user={user} />
-                                    </tr>
+                                <tr onClick={() => handleRowClick(message._id)}>
+                                    <TableRowMessage message={message} user={user} />
+                                </tr>
                             ))}
                         </tbody>
                     </table>
-                        </div>
                 </div>
             </div>
-            )
+        </div>
+    )
 }
 
-            export default MessageListCard
+export default MessageListCard

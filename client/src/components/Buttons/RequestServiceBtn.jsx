@@ -1,7 +1,7 @@
+import RequestForm from '../Forms/RequestForm'
 import { Button, Modal } from "react-bootstrap"
 import { PersonAdd } from 'react-bootstrap-icons'
-import RequestForm from '../Forms/RequestForm'
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 const RequestServiceButton = ({sender, recipient}) => {
     const [showRequestForm, setShowRequestForm] = useState(false);
@@ -16,12 +16,12 @@ const RequestServiceButton = ({sender, recipient}) => {
                     type="button" 
                     className="btn themed-btn" 
                     onClick={handleShowRequestForm}>
-                        <PersonAdd /> Request a Quote
+                        <PersonAdd /> Request Service
                 </button>
             </div>
             <Modal show={showRequestForm} onHide={handleCloseRequestForm}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Request Quote Form</Modal.Title>
+                    <Modal.Title>Request Training Service</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <RequestForm sender={sender} recipient={recipient} handleCloseRequestForm={handleCloseRequestForm}/>

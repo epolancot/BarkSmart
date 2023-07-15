@@ -1,7 +1,8 @@
-import { Button, Modal } from "react-bootstrap"
 import DogRegistrationForm from '../Forms/DogRegistrationForm'
-import React, { useState, useEffect } from "react"
+import { Button, Modal } from "react-bootstrap"
 import { Plus } from 'react-bootstrap-icons'
+import React, { useState } from "react"
+
 
 const RegisterNewDog = ({modalTitle, id}) => {
     const [showDogRegistrationForm, setShowDogRegistrationForm] = useState(false);

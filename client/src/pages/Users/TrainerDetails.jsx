@@ -23,7 +23,8 @@ const TrainerDetails = ({user}) => {
         username: user.username,
         name: user.name,
         email: user.email,
-        type: user.accountType
+        type: user.accountType,
+        dogs: user.dogs
     }
 
     const recipient = {
@@ -43,9 +44,11 @@ const TrainerDetails = ({user}) => {
                 type="trainer"
                 css="trainer-profile-bg"
             />
-            <SendMessageButton sender={sender} recipient={recipient} />
-            <div className="mt-2">
-            <RequestServiceButton sender={sender} recipient={recipient}/>
+            <div className="trainer-profile-actions">
+                <SendMessageButton sender={sender} recipient={recipient} />
+                <div className="mt-2">
+                <RequestServiceButton sender={sender} recipient={recipient}/>
+                </div>
             </div>
         </div>
 

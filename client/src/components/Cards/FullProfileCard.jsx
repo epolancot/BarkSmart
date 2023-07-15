@@ -1,8 +1,5 @@
-import { At } from 'react-bootstrap-icons'
 import ProfileCardBody from '../Sections/ProfileCardBody'
 import ChangeProfilePictureBtn from '../Buttons/ChangeProfilePictureBtn'
-import { useState } from "react"
-
 
 const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
     let css
@@ -43,7 +40,6 @@ const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
                                     />
                                     <h5>{profile.name}</h5>
                                     <p>{username}</p>
-                                    <i className="far fa-edit mb-5"></i>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body p-4">

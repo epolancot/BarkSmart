@@ -1,4 +1,5 @@
 import EditProfileBtn from '../Buttons/EditProfileBtn'
+import ProfileDogList from '../Sections/ProfileDogList'
 
 const ProfileCardBody = ({ type, title, profile, canEdit}) => {
     let editProfileBtn
@@ -16,6 +17,8 @@ const ProfileCardBody = ({ type, title, profile, canEdit}) => {
             } else {
                 dogSectionTitle = "Dog"
             }
+
+            dogSection = <ProfileDogList dogs={profile.dogs} />
         }
     }
     switch (type) {
@@ -31,7 +34,7 @@ const ProfileCardBody = ({ type, title, profile, canEdit}) => {
                     <h6>{dogSectionTitle}</h6>
                     <hr className="mt-0 mb-4" />
                     <div className="row pt-1 text-center">
-                        <p><i>{dogSection}</i></p>
+                        {dogSection}
                     </div>
                     <div className="text-center mt-3">
                         {editProfileBtn}

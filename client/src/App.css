@@ -22,11 +22,19 @@
     color: white !important;
 }
 
+.themed-btn:disabled {
+    background-color: #5a649f;
+    color: white !important;
+}
+
 .themed-card-header {
     background-color: #25306f;
     color: white;
 }
 
+.main-search {
+    margin-top: 30px;;
+}
 .paws-emoji-white {
     color: transparent;
     text-shadow: 0 0 0 white;
@@ -128,10 +136,10 @@ nav .active {
 .short-card {
     background: rgb(243, 240, 240);
     height: 100px;
-    width: 70%;
+    width: 40%;
     margin: 0 auto;
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #f2f0f0;
     box-shadow: 2px 2px 6px 0px rgba(255, 255, 255, 0.3);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
 }
@@ -140,6 +148,7 @@ nav .active {
     height: 100px;
     cursor: pointer;
     transform: scale(1.03);
+    font-weight: normal;
 }
 
 .short-card:focus {
@@ -148,6 +157,8 @@ nav .active {
 }
 
 .short-card p {
+    color: #3F497F;
+    font-weight: bold;
     font-size: 16px;
     text-align: center;
     margin-top: 30px;
@@ -161,6 +172,11 @@ nav .active {
     border-style: solid;
     border-color: white;
     margin-top: 7px;
+}
+
+.profile-list-card {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .link {
@@ -234,6 +250,26 @@ nav .active {
     cursor: pointer;
 }
 
+.profile-dog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+}
+
+.small-round-avatar {
+    border-radius: 50%;
+    height: 70px;
+    border-style: solid;
+    border-color:#3F497F;
+    opacity: 0.9;
+}
+
+.small-round-avatar:hover {
+    opacity: 1;
+}
+
+
 .message-list-card {
     width: 70%;
     margin:0 auto;
@@ -256,6 +292,10 @@ nav .active {
     background-color: #25306f;
     color: white !important;
     border: none;
+}
+
+.trainer-profile-actions button {
+    width: 190px;
 }
 
 @media (max-width: 768px) {
@@ -302,5 +342,10 @@ nav .active {
     .message-list-card {
         width: 100%;
         margin:0 auto;
+    }
+
+    .profile-list-card {
+        width: 100%;
+        margin: 0 auto;
     }
 }

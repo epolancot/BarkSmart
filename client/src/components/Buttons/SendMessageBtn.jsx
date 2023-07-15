@@ -1,7 +1,8 @@
+import MessageForm from '../Forms/MessageForm'
 import { Button, Modal } from "react-bootstrap"
 import { SendPlus } from 'react-bootstrap-icons'
-import { useState, useEffect } from "react"
-import MessageForm from '../Forms/MessageForm'
+import { useState } from "react"
+
 
 const SendMessageButton = ({sender, recipient}) => {
     const [showMessageForm, setShowMessageForm] = useState(false);

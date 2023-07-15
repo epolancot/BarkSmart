@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { SendRequest } from '../../services/RequestServices'
 
-const RequestForm = ({sender, recipient, handleCloseRequestForm}) => {
+const RequestForm = ({ sender, recipient, handleCloseRequestForm }) => {
     const [formValues, setFormValues] = useState({
         name: sender.name,
         email: sender.email,
         phone: '',
-        message: ''
+        message: '',
     })
 
     const handleChange = (e) => {
@@ -24,12 +24,12 @@ const RequestForm = ({sender, recipient, handleCloseRequestForm}) => {
                 recipientName: recipient.name,
                 phone: formValues.phone,
                 message: formValues.message,
-                participants: [sender.username,recipient.username]
-            }) 
+                participants: [sender.username, recipient.username]
+            })
             setFormValues({
                 message: '',
             })
-            handleCloseRequestForm()   
+            handleCloseRequestForm()
         } catch (error) {
             console.log(error)
         }

@@ -12,7 +12,7 @@ export const GetProfile = async (id, accountType) => {
             break
         case 'trainer':
             try {
-                const res = await Client.get('profiles/trainers/'+id)
+                const res = await Client.get('profiles/trainers/id/'+id)
                 return res.data
             } catch (error) {
                 throw error
@@ -25,5 +25,14 @@ export const GetProfile = async (id, accountType) => {
             } catch (error) {
                 throw error
             }
+    }
+}
+
+export const updateUser = async (id, data) => {
+    try {
+        const res = await Client.put(`/users/${id}`, data)
+        return res.data
+    } catch (error) {
+        throw error
     }
 }

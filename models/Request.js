@@ -26,6 +26,10 @@ const requestSchema = new Schema(
     message: { 
       type: String, 
     },
+    dog: { 
+      type: Schema.Types.ObjectId,
+      ref: 'dog'
+    },
     participants: [{
       type: String
     }]

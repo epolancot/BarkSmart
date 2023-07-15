@@ -138,7 +138,7 @@ const UserRegistrationForm = ({ type }) => {
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                     <button
                                                         type="submit"
-                                                        className="btn btn-primary btn-lg"
+                                                        className="btn themed-btn btn-lg"
                                                         disabled={!formValues.username ||
                                                             !formValues.email ||
                                                             !formValues.password ||
