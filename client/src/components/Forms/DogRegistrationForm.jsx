@@ -1,7 +1,5 @@
-import { useState } from 'react'
 import { RegisterDog } from '../../services/Auth'
-import { updateUser } from '../../services/ProfileServices'
-
+import { useState } from 'react'
 
 const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
     const [formValues, setFormValues] = useState({

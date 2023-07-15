@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import { RegisterUser, RegisterTrainer } from '../../services/Auth'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const UserRegistrationForm = ({ type }) => {

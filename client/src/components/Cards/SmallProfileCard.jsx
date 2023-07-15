@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 const SmallProfileCard = ({profile, css}) => { 
     return (
             <div className={"row card short-card"}>

@@ -1,11 +1,8 @@
-import Unauthorized from '../../components/Unauthorized'
-import { useParams, Link } from 'react-router-dom'
-import { Button, Modal } from "react-bootstrap"
-import React, { useState, useEffect } from "react"
-import MessageForm from '../../components/Forms/MessageForm'
-import { GetDogsByOwnerId } from '../../services/DogServices'
 import ProfileListCard from '../../components/Cards/ProfileListCard'
 import RegisterNewDog from '../../components/Buttons/RegisterNewDogBtn'
+import { GetDogsByOwnerId } from '../../services/DogServices'
+import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from "react"
 
 const HomeUser = ({ user }) => {
 

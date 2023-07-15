@@ -1,6 +1,6 @@
 import { GetRequest } from '../../services/RequestServices'
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import moment from 'moment'
 import ReactTimeAgo from 'react-time-ago'
 import SendMessageButton from '../../components/Buttons/SendMessageBtn'

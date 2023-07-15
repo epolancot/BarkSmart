@@ -1,12 +1,10 @@
-import axios from 'axios'
-import Client from '../../services/api'
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { BASE_BACKEND_URL } from '../../services/api'
-import { GetTrainers, GetTrainersByZipCode, GetTrainersByName } from '../../services/TrainerServices'
 import SearchBox  from '../../components/Search/Shared/SearchBox'
 import TrainerSearchResults from '../../components/Search/User/TrainersSearchResults'
 import DefaultResultsSection from '../../components/Search/User/DefaultResultsSection'
+import { GetTrainers, GetTrainersByZipCode, GetTrainersByName } from '../../services/TrainerServices'
+import { useState, useEffect } from 'react'
+
+
 
 
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import FullProfileCard from '../../components/Cards/FullProfileCard'
 import { GetProfile } from '../../services/ProfileServices'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const Profile = ({ user }) => {
     const [profile, setProfile] = useState({})

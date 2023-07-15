@@ -1,10 +1,9 @@
+import ApiSearchResults from '../../components/Search/Dog-API/ApiSearchResults'
+import SearchBox from '../../components/Search/Shared/SearchBox'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { BASE_URL } from '../../components/Globals'
 import { DOG_API_KEY } from '../../Api-key'
-import ApiSearchBox from '../../components/Search/Dog-API/ApiSearchBox'
-import ApiSearchResults from '../../components/Search/Dog-API/ApiSearchResults'
 
 const SearchApi = () => {
     const [searchResults, setSearchResults] = useState([])
@@ -27,19 +26,22 @@ const SearchApi = () => {
         setSearchQuery(event.target.value)
     }
 
-    let searchResultsSection
-
+    let searchResultsSection, headerSpace
     if (searched) {
+        headerSpace = ""
         if (searchResults.length === 0) {
             searchResultsSection = <div className="search-message"><h2>No information matching your search criteria found.</h2></div>
         } else {
             searchResultsSection = <ApiSearchResults searchResults={searchResults} />
         }
+    } else {
+        headerSpace = <div className="landing-header"></div>
     }
 
     return (
         <div className="container">
-            <ApiSearchBox onSubmit={getSearchResults} onChange={handleChange} value={searchQuery} />
+            {headerSpace}
+            <SearchBox onSubmit={getSearchResults} onChange={handleChange} value={searchQuery} placeholder="Search dog breeds" />
             <div className="d-flex justify-content-center">
                 {searchResultsSection}
             </div>

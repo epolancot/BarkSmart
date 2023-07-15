@@ -1,7 +1,7 @@
 import FullProfileCard from '../../components/Cards/FullProfileCard'
+import { GetDog } from '../../services/DogServices'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { GetDog } from '../../services/DogServices'
 
 const DogDetails = ({ user }) => {
     const [dogProfile, setDogProfile] = useState('')

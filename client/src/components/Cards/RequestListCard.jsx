@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react"
-import { GetRequests } from '../../services/RequestServices'
-import { PersonFillAdd } from 'react-bootstrap-icons'
-import { useNavigate } from 'react-router-dom'
 import TableRowRequest from '../TableRowRequest'
+import { PersonFillAdd } from 'react-bootstrap-icons'
+import { GetRequests } from '../../services/RequestServices'
+import { useState, useEffect } from "react"
+import { useNavigate } from 'react-router-dom'
+
 
 const RequestListCard = ({ user }) => {
     const navigate = useNavigate();
@@ -16,9 +17,9 @@ const RequestListCard = ({ user }) => {
         getMessages()
     }, [])
 
-   const handleRowClick = (id) => {
-    navigate(`/trainer/request/id/${id}`)
-   }
+    const handleRowClick = (id) => {
+        navigate(`/trainer/request/id/${id}`)
+    }
     return (
         <div>
             <div className="card message-list-card h-100">
@@ -36,16 +37,16 @@ const RequestListCard = ({ user }) => {
                         </thead>
                         <tbody>
                             {requests.map((request) => (
-                                    <tr onClick={()=> handleRowClick(request._id)}>
-                                        <TableRowRequest request={request} user={user} />
-                                    </tr>
+                                <tr onClick={() => handleRowClick(request._id)}>
+                                    <TableRowRequest request={request} user={user} />
+                                </tr>
                             ))}
                         </tbody>
                     </table>
-                        </div>
                 </div>
             </div>
-            )
+        </div>
+    )
 }
 
-            export default RequestListCard
+export default RequestListCard

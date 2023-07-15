@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import Client from '../../services/api'
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
 const UploadFile = ({ profileType, profileId, handleCloseUploadFileForm}) => {

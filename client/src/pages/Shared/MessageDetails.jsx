@@ -3,16 +3,12 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import moment from 'moment'
 import ReactTimeAgo from 'react-time-ago'
-import SendMessageButton from '../../components/Buttons/SendMessageBtn'
-
-
 
 const MessageDetails = ({ user }) => {
     let { id } = useParams()
 
     const [message, setMessage] = useState([])
     const [options, setOptions] = useState([])
-
 
     useEffect(() => {
         const GetMessageDetails = async () => {

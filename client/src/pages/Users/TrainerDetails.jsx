@@ -1,9 +1,11 @@
 import FullProfileCard from '../../components/Cards/FullProfileCard'
-import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { GetTrainer } from '../../services/TrainerServices'
 import RequestServiceButton from '../../components/Buttons/RequestServiceBtn'
 import SendMessageButton from '../../components/Buttons/SendMessageBtn'
+import { GetTrainer } from '../../services/TrainerServices'
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+
+
 
 const TrainerDetails = ({user}) => {
     const [profile, setProfile] = useState('')

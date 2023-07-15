@@ -1,6 +1,6 @@
+import TableRowMessage from '../TableRowMessage'
 import { ChatLeftText } from 'react-bootstrap-icons'
 import { GetUserMessages } from '../../services/MessageServices'
-import TableRowMessage from '../TableRowMessage'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react"
 

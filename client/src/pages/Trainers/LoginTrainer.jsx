@@ -1,6 +1,6 @@
 import LoginForm from '../../components/Forms/LoginForm'
-import { Link, useNavigate } from "react-router-dom";
 import { SignInTrainer } from '../../services/Auth'
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react'
 
 const LoginUser = ({setUser}) => {

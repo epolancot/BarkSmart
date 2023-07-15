@@ -1,4 +1,3 @@
-import SmallProfileCard from '../Cards/SmallProfileCard'
 import { Link } from "react-router-dom";
 
 const ProfileDogList = ({dogs}) => {

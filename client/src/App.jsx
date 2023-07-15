@@ -8,6 +8,10 @@ import TrainerNavBar from './components/NavBars/TrainerNavBar'
 import Footer from './components/Footers/Footer'
 import Landing from './pages/Open/Landing'
 import SearchApi from './pages/Shared/SearchApi'
+import DogDetails from './pages/Shared/DogDetails'
+import Messages from './pages/Shared/Messages'
+import MessageDetails from './pages/Shared/MessageDetails'
+import Profile from './pages/Shared/Profile'
 import LoginUser from './pages/Users/LoginUser'
 import RegisterUser from './pages/Users/RegisterUser'
 import HomeUser from './pages/Users/HomeUser'
@@ -18,10 +22,6 @@ import RegisterTrainer from './pages/Trainers/RegisterTrainer'
 import HomeTrainer from './pages/Trainers/HomeTrainer'
 import Requests from './pages/Trainers/Requests'
 import RequestDetails from './pages/Trainers/RequestDetails'
-import DogDetails from './pages/Shared/DogDetails'
-import Messages from './pages/Shared/Messages'
-import MessageDetails from './pages/Shared/MessageDetails'
-import Profile from './pages/Shared/Profile'
 
 
 function App() {
@@ -68,7 +68,7 @@ function App() {
         <div className="flex-wrapper">
           <main>
             <Routes>
-              <Route path="/" element={<Landing user={user}/>} />
+              <Route path="/" element={<SearchApi user={user}/>} />
               <Route path="/search-api" element={<SearchApi />} user={user} />
               <Route path="/user/login" element={<LoginUser setUser={setUser}/>} />
               <Route path="/user/register" element={<RegisterUser setUser={setUser}/>} />

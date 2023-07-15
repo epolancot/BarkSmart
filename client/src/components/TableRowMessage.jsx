@@ -1,7 +1,6 @@
-import { BoxArrowInDownLeft, BoxArrowUpRight  } from 'react-bootstrap-icons'
 import ReactTimeAgo from 'react-time-ago'
 import moment from 'moment'
-
+import { BoxArrowInDownLeft, BoxArrowUpRight  } from 'react-bootstrap-icons'
 
 const SmallMessageCard = ({user, message, css}) => {
     let arrow, contact 
@@ -15,7 +14,6 @@ const SmallMessageCard = ({user, message, css}) => {
 
 
     return (
-
         <>
             <td>
                 {arrow}
