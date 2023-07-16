@@ -4,10 +4,10 @@ const userSchema = new Schema(
   {
     username: { 
       type: String, 
-      required: true 
+      required: true
     },
     name: { 
-      type: String, 
+      type: String,
     },
     lastName: { 
       type: String, 

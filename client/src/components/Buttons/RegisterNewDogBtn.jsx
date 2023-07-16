@@ -1,7 +1,8 @@
 import DogRegistrationForm from '../Forms/DogRegistrationForm'
 import { Button, Modal } from "react-bootstrap"
 import { Plus } from 'react-bootstrap-icons'
-import React, { useState } from "react"
+import { useState } from "react"
+
 
 
 const RegisterNewDog = ({ modalTitle, id, dogListUpdate, setDogListUpdate }) => {

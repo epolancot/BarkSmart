@@ -13,7 +13,7 @@ const GetAll = async (req, res) => {
 
 const GetDog = async (req, res) => {
     try {
-        const dog = await Dog.findById(req.params.dog_id)
+        const dog = await Dog.findById(req.params.dog_id).populate("owner")
         res.send(dog)
     } catch (error) {
         res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
@@ -22,7 +22,7 @@ const GetDog = async (req, res) => {
 
 const GetDogByOwnerId = async (req, res) => {
     try {
-        const dogs = await Dog.find({ owner: req.params.owner_id })
+        const dogs = await Dog.find({ owner: req.params.owner_id }).populate("owner")
         res.send(dogs)
     } catch (error) {
         res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })

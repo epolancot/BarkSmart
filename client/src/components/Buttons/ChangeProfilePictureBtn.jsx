@@ -13,7 +13,6 @@ const ChangeProfilePictureBtn = ({
     setAvatar
     }) => { 
 
-    console.log(avatar)
     const [showUploadFileForm, setShowUploadFileForm] = useState(false);
     const formTitle = 'Select Picture'
 

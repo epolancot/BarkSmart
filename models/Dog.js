@@ -16,12 +16,6 @@ const dogSchema = new Schema(
         dob: {
             type: Date
         },
-        weight: {
-            type: String
-        },
-        height: {
-            type: String
-        },
         comments: [{
             by: {
                 type: String,

@@ -83,7 +83,6 @@ router.post('/s3',
 router.get('/', async (req, res) => {
     try {
         const pictures = await Picture.find()
-        console.log(pictures)
         res.send(pictures)
     } catch (err) {
         res.send({ message: err, m: "not working" })

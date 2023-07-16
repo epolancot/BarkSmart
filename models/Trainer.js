@@ -37,9 +37,9 @@ const trainerSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'Message'
         }],
-        zipCodes: [{
-            type: Number
-        }],
+        city: {
+            type: String
+        },
         rating: {
             type: Number
         },

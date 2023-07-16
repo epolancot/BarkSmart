@@ -266,14 +266,16 @@ nav .active {
 
 .profile-dog-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    grid-gap: 20px;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    grid-gap: 15px;
     align-items: stretch;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.small-round-avatar {
-    border-radius: 50%;
+.small-box-avatar {
     height: 70px;
+    width: 70px;
     border-style: solid;
     border-color:#3F497F;
     opacity: 0.9;
