@@ -4,7 +4,7 @@ import { Plus } from 'react-bootstrap-icons'
 import React, { useState } from "react"
 
 
-const RegisterNewDog = ({modalTitle, id}) => {
+const RegisterNewDog = ({ modalTitle, id, dogListUpdate, setDogListUpdate }) => {
     const [showDogRegistrationForm, setShowDogRegistrationForm] = useState(false);
     const handleCloseRegistration = () => setShowDogRegistrationForm(false);
     const handleShowRegistration = () => setShowDogRegistrationForm(true);
@@ -19,7 +19,11 @@ const RegisterNewDog = ({modalTitle, id}) => {
                     <Modal.Title>{modalTitle}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <DogRegistrationForm id={id} handleCloseRegistration={handleCloseRegistration} />
+                    <DogRegistrationForm
+                        id={id}
+                        handleCloseRegistration={handleCloseRegistration}
+                        dogListUpdate={dogListUpdate}
+                        setDogListUpdate={setDogListUpdate} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleCloseRegistration}>

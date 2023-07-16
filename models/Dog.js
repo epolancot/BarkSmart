@@ -43,6 +43,10 @@ const dogSchema = new Schema(
         trainer: {
             type: Schema.Types.ObjectId,
             ref: 'Trainer',
+        },
+        accountType: {
+            type: String,
+            default: "dog"
         }
     },
     { timestamps: true }

@@ -1,7 +1,7 @@
 import { RegisterDog } from '../../services/Auth'
 import { useState } from 'react'
 
-const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
+const UserRegistrationForm = ({ id, handleCloseRegistration,dogListUpdate, setDogListUpdate}) => {
     const [formValues, setFormValues] = useState({
         name: '',
         breed: '',
@@ -32,7 +32,7 @@ const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
             weight: '',
             height: '',
         })
-
+        setDogListUpdate(dogListUpdate+1)
         handleCloseRegistration()
 
     }

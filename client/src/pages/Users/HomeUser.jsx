@@ -8,6 +8,7 @@ const HomeUser = ({ user }) => {
 
     let { id } = useParams()
     const [profiles, setProfiles] = useState([])
+    const [dogListUpdate, setDogListUpdate] = useState(0)
 
     useEffect(() => {
         const getDogs = async () => {
@@ -15,8 +16,7 @@ const HomeUser = ({ user }) => {
             setProfiles(response)
         }
         getDogs()
-    }, [profiles])
-
+    }, [dogListUpdate])
 
     let cardTitle = "Your Dog"
     if (profiles.length > 1) {
@@ -27,10 +27,15 @@ const HomeUser = ({ user }) => {
         <div className="container mt-5">
             <ProfileListCard profiles={profiles} cardTitle={cardTitle} />
             <div className="mt-2 center-text">
-                <RegisterNewDog modalTitle='Register New Dog' id={id} />
+                <RegisterNewDog
+                    modalTitle='Register New Dog'
+                    id={id}
+                    dogListUpdate={dogListUpdate}
+                    setDogListUpdate={setDogListUpdate} 
+                />
             </div>
         </div>
-    ) 
+    )
 }
 
 export default HomeUser
