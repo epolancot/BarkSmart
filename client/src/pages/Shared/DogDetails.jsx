@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 
 const DogDetails = ({ user }) => {
     const [dogProfile, setDogProfile] = useState('')
-    const [profileAvatarUpdate, setProfileAvatarUpdate] = useState(0)
+    const [avatar, setAvatar] = useState('')
     const [profileInfoUpdate, setProfileInfoUpdate] = useState(0)
 
     let { id } = useParams()
@@ -14,9 +14,10 @@ const DogDetails = ({ user }) => {
         const getDogProfile = async () => {
             const response = await GetDog(id)
             setDogProfile(response)
+            setAvatar(response.avatar)
         }
         getDogProfile()
-    }, [profileAvatarUpdate, profileInfoUpdate])
+    }, [avatar, profileInfoUpdate])
 
     let canEdit
     if (user.id === dogProfile.owner) {
@@ -32,10 +33,8 @@ const DogDetails = ({ user }) => {
                 type="dog"
                 css="dog-profile-bg"
                 canEdit = {canEdit}
-                profileAvatarUpdate = {profileAvatarUpdate}
-                setProfileAvatarUpdate = {setProfileAvatarUpdate}
-                profileInfoUpdate = {profileInfoUpdate}
-                setProfileInfoUpdate = {setProfileInfoUpdate}
+                avatar={avatar}
+                setAvatar={setAvatar}
             />
         </div>
     )
