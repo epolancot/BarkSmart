@@ -26,6 +26,8 @@ import RequestDetails from './pages/Trainers/RequestDetails'
 
 function App() {
   const [user, setUser] = useState(null)
+  const [currentUserAvatar, setCurrentUserAvatar] = useState(null)
+
 
   const checkToken = async () => {
     //If a token exists, sends token to localStorage to persist logged in user
@@ -84,7 +86,7 @@ function App() {
               <Route path="/dog/id/:id" element={<DogDetails setUser={setUser} user={user}/>} />
               <Route path="/messages" element={<Messages setUser={setUser} user={user}/>} />
               <Route path="/messages/id/:id" element={<MessageDetails setUser={setUser} user={user}/>} />
-              <Route path="/profile/view/:id" element={<Profile user={user}/>} />
+              <Route path="/profile/view/:id" element={<Profile user={user} setUser={setUser}/>} />
             </Routes>
           </main>
           <footer>

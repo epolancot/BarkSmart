@@ -1,26 +1,31 @@
 import Client from '../../services/api'
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
 
-const UploadFile = ({ profileType, profileId, handleCloseUploadFileForm}) => {
-    const navigate = useNavigate()
-
+const UploadFile = ({ 
+    profileType, 
+    profileId, 
+    handleCloseUploadFileForm,
+    avatar,
+    setAvatar
+    }) => {
+    
     const [file, setFile] = useState()
-
+    
     const handleSubmit = async event => {
         event.preventDefault()
-
         const formData = new FormData();
-        formData.append("pictureUrl", file, profileId)
+        const fileName = `${profileId}-${file.name}`
+        formData.append("pictureUrl", file, fileName)
         formData.append("profileType", profileType)
         formData.append("profileId", profileId)
 
-        await Client.post("/pictures/s3", formData, {
+        const response = await Client.post("/pictures/s3", formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             }
         })
-        navigate(`/profile/view/${profileId}`)
+
+        setAvatar(response.data)
         handleCloseUploadFileForm()   
     }
 

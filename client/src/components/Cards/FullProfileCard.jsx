@@ -1,25 +1,36 @@
 import ProfileCardBody from '../Sections/ProfileCardBody'
 import ChangeProfilePictureBtn from '../Buttons/ChangeProfilePictureBtn'
 
-const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
+
+const ProfileCardFull = ({
+    user,
+    profile,
+    title,
+    type,
+    canEdit,
+    avatar,
+    setAvatar
+}) => {
     let css
 
     switch (type) {
         case "user":
-            css="user-profile-bg"
+            css = "user-profile-bg"
             break
         case "trainer":
-            css="trainer-profile-bg"
+            css = "trainer-profile-bg"
             break
         case "dog":
-            css="dog-profile-bg"
+            css = "dog-profile-bg"
             break
     }
 
     let changeProfilePictureBtn
     if (canEdit) {
-        changeProfilePictureBtn = <ChangeProfilePictureBtn/>
-    } 
+        changeProfilePictureBtn =
+            <ChangeProfilePictureBtn 
+            />
+    }
 
     let username
     profile.username ? username = `@${profile.username}` : username = ""
@@ -33,11 +44,13 @@ const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
                         <div className="card mb-3" style={{ borderRadius: '.5rem' }}>
                             <div className="row g-0">
                                 <div className={`col-md-4 ${css} text-center text-white full-profile-card-side-bar`}>
-                                    <ChangeProfilePictureBtn 
-                                        profileAvatar={profile.avatar} 
+                                    <ChangeProfilePictureBtn
+                                        profileAvatar={profile.avatar}
                                         profileId={profile._id}
                                         profileType={profile.accountType}
                                         canEdit={canEdit}
+                                        avatar={avatar}
+                                        setAvatar={setAvatar}
                                     />
                                     <h5>{profile.name}</h5>
                                     <p>{username}</p>
@@ -46,10 +59,10 @@ const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
                                     <div className="card-body p-4">
                                         <div className="edit-profile-btn">
                                         </div>
-                                        <ProfileCardBody 
-                                            title={title} 
+                                        <ProfileCardBody
+                                            title={title}
                                             profile={profile}
-                                            type={type} 
+                                            type={type}
                                             canEdit={canEdit}
                                         />
                                     </div>

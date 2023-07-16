@@ -49,11 +49,7 @@ router.post('/s3',
                     const user = await User.findById(req.body.profileId)
                     user.avatar = data.Location
                     user.save().then(result => {
-                        res.status(200).send({
-                            profileType: user.profileType,
-                            profileId: user.profileId,
-                            pictureUrl: user.data.Location,
-                        })
+                        res.status(200).send(user.avatar)
                     })
                         .catch(err => {
                             res.send({ message: err })
@@ -63,11 +59,7 @@ router.post('/s3',
                     const trainer = await Trainer.findById(req.body.profileId)
                     trainer.avatar = data.Location
                     trainer.save().then(result => {
-                        res.status(200).send({
-                            profileType: user.profileType,
-                            profileId: user.profileId,
-                            pictureUrl: user.data.Location,
-                        })
+                        res.status(200).send(trainer.avatar)
                     })
                         .catch(err => {
                             res.send({ message: err })
@@ -77,11 +69,7 @@ router.post('/s3',
                     const dog = await Dog.findById(req.body.profileId)
                     dog.avatar = data.Location
                     dog.save().then(result => {
-                        res.status(200).send({
-                            profileType: user.profileType,
-                            profileId: user.profileId,
-                            pictureUrl: user.data.Location,
-                        })
+                        res.status(200).send(dog.avatar)
                     })
                         .catch(err => {
                             res.send({ message: err })

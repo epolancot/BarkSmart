@@ -3,7 +3,17 @@ import { Button, Modal } from "react-bootstrap"
 import { Tools } from 'react-bootstrap-icons'
 import { useState } from "react"
 
-const ChangeProfilePictureBtn = ({ user, profileId, profileType, profileAvatar, canEdit }) => {
+const ChangeProfilePictureBtn = ({ 
+    user, 
+    profileId, 
+    profileType, 
+    profileAvatar, 
+    canEdit,
+    avatar,
+    setAvatar
+    }) => { 
+
+    console.log(avatar)
     const [showUploadFileForm, setShowUploadFileForm] = useState(false);
     const formTitle = 'Select Picture'
 
@@ -16,7 +26,7 @@ const ChangeProfilePictureBtn = ({ user, profileId, profileType, profileAvatar, 
             className="profile-image-tool-icon"
             onClick={handleShowUploadFileForm}
         />
-        avatarBtn = <img src={profileAvatar}
+        avatarBtn = <img src={avatar}
             alt="Avatar"
             className="img-fluid my-4 full-profile-card-avatar"
             onClick={handleShowUploadFileForm}
@@ -40,10 +50,14 @@ const ChangeProfilePictureBtn = ({ user, profileId, profileType, profileAvatar, 
                 </Modal.Header>
                 <Modal.Body>
                     <UploadFile
+                        user={user}
                         handleCloseUploadFileForm={handleCloseUploadFileForm}
                         formTitle={formTitle}
                         profileType={profileType}
                         profileId={profileId}
+                        avatar={avatar}
+                        setAvatar={setAvatar}
+
                     />
                 </Modal.Body>
                 <Modal.Footer>

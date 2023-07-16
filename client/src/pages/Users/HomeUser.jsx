@@ -25,7 +25,10 @@ const HomeUser = ({ user }) => {
 
     return (
         <div className="container mt-5">
-            <ProfileListCard profiles={profiles} cardTitle={cardTitle} />
+            <ProfileListCard 
+                profiles={profiles} 
+                cardTitle={cardTitle} 
+            />
             <div className="mt-2 center-text">
                 <RegisterNewDog
                     modalTitle='Register New Dog'

@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom'
 
 const Profile = ({ user }) => {
     const [profile, setProfile] = useState({})
+    const [avatar, setAvatar] = useState('')
+
     let { id } = useParams()
 
     const title = ''
@@ -15,6 +17,7 @@ const Profile = ({ user }) => {
         const getProfileDetails = async () => {
             const response = await GetProfile(id, user.accountType)
             setProfile(response)
+            setAvatar(response.avatar)
         }
 
         getProfileDetails()
@@ -25,8 +28,6 @@ const Profile = ({ user }) => {
         canEdit = true
     }
 
-
-
     return (
         <div className="container">
             <FullProfileCard 
@@ -36,6 +37,8 @@ const Profile = ({ user }) => {
                 type={type} 
                 canEdit={canEdit}
                 dogs={(profile.dogs) ? profile.dogs : ""}
+                avatar={avatar}
+                setAvatar={setAvatar}
             />
         </div>
     )
