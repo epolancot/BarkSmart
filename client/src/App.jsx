@@ -69,7 +69,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<SearchApi user={user}/>} />
-              <Route path="/search-api" element={<SearchApi />} user={user} />
+              <Route path="/search-api" element={<SearchApi user={user} />}  />
               <Route path="/user/login" element={<LoginUser setUser={setUser}/>} />
               <Route path="/user/register" element={<RegisterUser setUser={setUser}/>} />
               <Route path="/user/home/:id" element={<HomeUser user={user}/>} />

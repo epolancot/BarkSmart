@@ -1,7 +1,6 @@
 import MessageListCard from '../../components/Cards/MessageListCard'
 
 const Messages = ({user}) => {
-    console.log(user)
     return (
             <div className="container mt-5 justify-content-center">
                 <MessageListCard user={user} />    

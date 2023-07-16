@@ -1,11 +1,11 @@
 import ApiSearchDogCard from './ApiSearchDogCard'
 
-const ApiSearchResults = ({ searchResults }) => {
+const ApiSearchResults = ({ user, searchResults }) => {
     return (
         <div className="api-search-results-grid">
             {searchResults.map((dog, id)=>(
                 <div key={id}>
-                <ApiSearchDogCard dog={dog} />
+                <ApiSearchDogCard dog={dog} user={user} />
                 </div>
             ))}
         </div>

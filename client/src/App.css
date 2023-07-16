@@ -33,8 +33,12 @@
 }
 
 .progress-bar-bg {
-    background-color:#b5b5b5;
+    background-color:#8c8c8c; 
     font-size: 14px;
+}
+
+.progress-bg {
+    background-color:#3F497F;
 }
 
 .landing-header {
@@ -252,7 +256,8 @@ nav .active {
 .profile-image-tool-icon {
     position: absolute;
     margin-top: 100px;
-    color: white;
+    color: #636363
+
 }
 
 .profile-image-tool-icon:hover {

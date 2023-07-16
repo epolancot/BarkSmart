@@ -25,6 +25,8 @@ const Profile = ({ user }) => {
         canEdit = true
     }
 
+
+
     return (
         <div className="container">
             <FullProfileCard 

@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { BASE_URL } from '../../components/Globals'
 import { DOG_API_KEY } from '../../Api-key'
 
-const SearchApi = () => {
+const SearchApi = (user) => {
     const [searchResults, setSearchResults] = useState([])
     const [searched, toggleSearched] = useState(false)
     const [searchQuery, setSearchQuery] = useState('')
@@ -32,7 +32,7 @@ const SearchApi = () => {
         if (searchResults.length === 0) {
             searchResultsSection = <div className="search-message"><h2>No information matching your search criteria found.</h2></div>
         } else {
-            searchResultsSection = <ApiSearchResults searchResults={searchResults} />
+            searchResultsSection = <ApiSearchResults searchResults={searchResults} user={user}/>
         }
     } else {
         headerSpace = <div className="landing-header"></div>

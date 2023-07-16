@@ -4,7 +4,7 @@ import ProfileDogList from '../Sections/ProfileDogList'
 const ProfileCardBody = ({ type, title, profile, canEdit}) => {
     let editProfileBtn
     if (canEdit) {
-        editProfileBtn = <EditProfileBtn />
+        editProfileBtn = <EditProfileBtn profile={profile}/>
     }
 
     let dogSectionTitle, dogSection
@@ -61,11 +61,6 @@ const ProfileCardBody = ({ type, title, profile, canEdit}) => {
                     <div className="row pt-1">
                         <p>{profile.bio}</p>
                     </div>
-                    <div className="d-flex justify-content-start">
-                        <a href="#!"><i className="fab fa-facebook-f fa-lg me-3"></i></a>
-                        <a href="#!"><i className="fab fa-twitter fa-lg me-3"></i></a>
-                        <a href="#!"><i className="fab fa-instagram fa-lg"></i></a>
-                    </div>
                 </div>
             )
         case "dog":
@@ -83,10 +78,12 @@ const ProfileCardBody = ({ type, title, profile, canEdit}) => {
                     <p className="text-muted">{profile.ownerName}</p>
                     <h6>Trainer</h6>
                     <p className="text-muted">{profile.trainerName}</p>
-                    <h6>Comments</h6>
                     <hr className="mt-0 mb-4" />
                     <div className="row pt-1">
                         <p>{profile.bio}</p>
+                    </div>
+                    <div className="text-center">
+                        {editProfileBtn}
                     </div>
                 </div>
             )

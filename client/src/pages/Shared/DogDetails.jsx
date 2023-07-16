@@ -16,6 +16,10 @@ const DogDetails = ({ user }) => {
         getDogProfile()
     }, [])
 
+    let canEdit
+    if (user.id === dogProfile.owner) {
+        canEdit = true
+    }
 
     return (
         <div>
@@ -25,6 +29,7 @@ const DogDetails = ({ user }) => {
                 title={`${dogProfile.name}'s information`}
                 type="dog"
                 css="dog-profile-bg"
+                canEdit = {canEdit}
             />
         </div>
     )

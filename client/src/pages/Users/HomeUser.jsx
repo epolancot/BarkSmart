@@ -15,7 +15,7 @@ const HomeUser = ({ user }) => {
             setProfiles(response)
         }
         getDogs()
-    }, [])
+    }, [profiles])
 
 
     let cardTitle = "Your Dog"

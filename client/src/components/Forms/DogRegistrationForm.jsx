@@ -5,7 +5,7 @@ const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
     const [formValues, setFormValues] = useState({
         name: '',
         breed: '',
-        age: '',
+        dob: '',
         weight: '',
         height: '',
     })
@@ -19,16 +19,16 @@ const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
         await RegisterDog({
             name: formValues.name,
             breed: formValues.breed,
-            age: formValues.age,
-            weight: formValues.age,
-            height: formValues.age,
+            dob: formValues.dob,
+            weight: formValues.weight,
+            height: formValues.height,
             owner: id,
         })
 
         setFormValues({
             name: '',
             breed: '',
-            age: '',
+            dob: '',
             weight: '',
             height: '',
         })
@@ -70,14 +70,14 @@ const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
                 </div>
                 <div className="d-flex flex-row align-items-center mb-4">
                     <div className="form-outline flex-fill mb-0">
-                        <label className="form-label" htmlFor="inputAge">Age</label>
+                        <label className="form-label" htmlFor="inputDob">Date of Birth</label>
                         <input
                             onChange={handleChange}
-                            type="text"
-                            name="age"
-                            id="inputAge"
+                            type="date"
+                            name="dob"
+                            id="inputDob"
                             className="form-control"
-                            value={formValues.age}
+                            value={formValues.dob}
                             required
                         />
                     </div>
@@ -88,7 +88,7 @@ const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
                         <input
                             onChange={handleChange}
                             type="text"
-                            name="Weight"
+                            name="weight"
                             id="inputWeight"
                             className="form-control"
                             value={formValues.weight}
@@ -102,7 +102,7 @@ const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
                         <input
                             onChange={handleChange}
                             type="text"
-                            name="Height"
+                            name="height"
                             id="inputHeight"
                             className="form-control"
                             value={formValues.height}
@@ -116,7 +116,7 @@ const UserRegistrationForm = ({ id, handleCloseRegistration }) => {
                         className="btn themed-btn"
                         disabled={!formValues.name ||
                             !formValues.breed ||
-                            !formValues.age
+                            !formValues.dob
                         }
                     >Register</button>
                 </div>

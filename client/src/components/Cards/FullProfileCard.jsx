@@ -3,6 +3,7 @@ import ChangeProfilePictureBtn from '../Buttons/ChangeProfilePictureBtn'
 
 const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
     let css
+
     switch (type) {
         case "user":
             css="user-profile-bg"
@@ -18,7 +19,7 @@ const ProfileCardFull = ({user, profile, title, type, canEdit}) => {
     let changeProfilePictureBtn
     if (canEdit) {
         changeProfilePictureBtn = <ChangeProfilePictureBtn/>
-    }
+    } 
 
     let username
     profile.username ? username = `@${profile.username}` : username = ""
