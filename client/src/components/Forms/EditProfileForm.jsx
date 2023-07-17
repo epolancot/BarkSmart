@@ -13,7 +13,6 @@ const EditProfileForm = ({ profile, formFields }) => {
     }
 
 
-    console.log(profile.accountType)
     let editForm
     switch (profile.accountType) {
         case "user":

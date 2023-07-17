@@ -4,18 +4,13 @@ import DefaultResultsSection from '../../components/Search/User/DefaultResultsSe
 import { GetTrainers, GetTrainersByZipCode, GetTrainersByName } from '../../services/TrainerServices'
 import { useState, useEffect } from 'react'
 
-
-
-
-
-
 const SearchTrainers = ({ user }) => {
     const [searchResults, setSearchResults] = useState([])
     const [searched, toggleSearched] = useState(false)
     const [searchQuery, setSearchQuery] = useState('')
     const [trainersList, setTrainersList] = useState([])
 
-    const searchPlaceholder = "Name or Zip Code"
+    const searchPlaceholder = "Name or City"
 
     useEffect(() => {
         const GetTrainersList = async () => {

@@ -8,11 +8,12 @@ const ProfileCardBody = ({ type, title, profile, canEdit}) => {
     if (canEdit) {
         editProfileBtn = <EditProfileBtn profile={profile}/>
     }
-    let date,ownerId, ownerAvatar
+    let date,ownerId, ownerAvatar, birthday
     if (profile.dob) {
         date = new Date(profile.dob)
         ownerId = profile.owner._id
         ownerAvatar = profile.owner.avatar
+        birthday = `${date.toLocaleString('default', { month: 'long' })} ${date.getDate().toString()}`
     }
     let dogSectionTitle, dogSection
     if (profile.dogs) {
@@ -28,6 +29,7 @@ const ProfileCardBody = ({ type, title, profile, canEdit}) => {
             dogSection = <ProfileDogList dogs={profile.dogs} />
         }
     }
+
     switch (type) {
         case "user":
             return (
@@ -72,6 +74,8 @@ const ProfileCardBody = ({ type, title, profile, canEdit}) => {
                     <p className="text-muted">{profile.breed}</p>
                     <h6>Born</h6>
                     <p className="text-muted">{moment(date, "YYYYMMDD").fromNow()}</p>
+                    <h6>Birthday</h6>
+                    <p className="text-muted">{birthday}</p>
                     <h6>Owner</h6>
                     <div>
                         <Link to={`/profile/view/${ownerId}`}>

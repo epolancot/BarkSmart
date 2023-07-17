@@ -70,7 +70,8 @@ const GetByQuery = async (req, res) => {
         const profile = await Trainer.find(
             {$or: [ { name: req.params.query},
                     { lastName: req.params.query},
-                    { username: req.params.query}
+                    { username: req.params.query},
+                    { city: req.params.query}
             ]},
             {
                 _id:1,
@@ -79,7 +80,7 @@ const GetByQuery = async (req, res) => {
                 lastName:1,
                 avatar:1,
                 rating:1,
-                zipCodes:1
+                city:1
             })
         res.send(profile)
     } catch (error) {

@@ -60,7 +60,11 @@ const EditProfileBtn = ({ profile }) => {
                 formFields.breed = profile.breed
             }
             if (profile.dob) {
-                formFields.dob = profile.dob
+                const date = new Date(profile.dob)
+                const yyyy = date.getFullYear().toString()
+                const MM = ("0" + date.getMonth().toString()).slice(-2)
+                const dd = ("0" + date.getDate().toString()).slice(-2)
+                formFields.dob = `${yyyy}-${MM}-${dd}`
             }
             break
     }

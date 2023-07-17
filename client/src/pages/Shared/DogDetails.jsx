@@ -20,9 +20,12 @@ const DogDetails = ({ user }) => {
     }, [avatar, profileInfoUpdate])
 
     let canEdit
-    if (user.id === dogProfile.owner) {
-        canEdit = true
+    if (dogProfile){
+        if (user.id === dogProfile.owner._id) {
+            canEdit = true
+        }
     }
+
 
     return (
         <div>
