@@ -15,6 +15,9 @@ const userSchema = new Schema(
     email: { 
       type: String
     },
+    city: { 
+      type: String
+    },
     avatar: { 
       type: String,
       default: 'https://i.imgur.com/NkxehCJ.png'

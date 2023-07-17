@@ -1,9 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 
 const UserNavBar = ({ handleLogOut, user }) => {
-    const handleClick = () => {
-
-    }
 
     return (
         <nav className="navbar navbar-expand-lg themed-background navbar-dark">

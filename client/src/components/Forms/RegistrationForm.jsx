@@ -70,7 +70,6 @@ const UserRegistrationForm = ({ type }) => {
                                             <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">{signUpTitle}</p>
                                             <form className="mx-1 mx-md-4" onSubmit={handleSubmit}>
                                                 <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
                                                         <label className="form-label" htmlFor="inputUsername">Username</label>
                                                         <input
@@ -85,7 +84,6 @@ const UserRegistrationForm = ({ type }) => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
                                                         <label className="form-label" htmlFor="inputEmail">Your Email</label>
                                                         <input
@@ -100,7 +98,6 @@ const UserRegistrationForm = ({ type }) => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
                                                         <label className="form-label" htmlFor="inputPassword">Password</label>
                                                         <input
@@ -115,7 +112,6 @@ const UserRegistrationForm = ({ type }) => {
                                                     </div>
                                                 </div>
                                                 <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
                                                         <label className="form-label" htmlFor="inputConfirmPassword">Repeat your password</label>
                                                         <input
@@ -132,7 +128,7 @@ const UserRegistrationForm = ({ type }) => {
                                                 <div className="form-check d-flex justify-content-center mb-5">
                                                     <input className="form-check-input me-2" type="checkbox" value="" id="checkBoxTos" required />
                                                     <label className="form-check-label" htmlFor="checkBoxTos">
-                                                        I agree all statements in <a href="#!">Terms of service</a>
+                                                        I agree all statements in <a href="#!" className="themed-link">Terms of service</a>
                                                     </label>
                                                 </div>
                                                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

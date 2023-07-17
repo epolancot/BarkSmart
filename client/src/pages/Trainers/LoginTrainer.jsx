@@ -32,7 +32,7 @@ const LoginUser = ({setUser}) => {
                     <div className="col-md-8 col-lg-6 col-xl-4">
                         <LoginForm handleSubmit={handleSubmit} handleChange={handleChange} formValues={formValues}/>
                         <div className="text-center text-lg-start mt-4 pt-2">
-                                <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/trainer/register" className="link-danger">Register as trainer today</Link></p>
+                                <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/trainer/register" className="themed-link">Register as trainer today</Link></p>
                             </div>
                     </div>
                 </div>

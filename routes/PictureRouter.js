@@ -1,11 +1,9 @@
 const router = require('express').Router()
-const multer = require('multer')
 const Aws = require('aws-sdk')
-const { Picture } = require('../models')
 const { User } = require('../models')
 const { Dog } = require('../models')
 const { Trainer } = require('../models')
-const userSchema = require('../models/User')
+const multer = require('multer')
 require("dotenv/config")
 
 const storage = multer.memoryStorage({

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { SignInUser } from '../../services/Auth'
 import { useState } from 'react'
 
-const LoginUser = ({setUser}) => {
+const LoginUser = ({ setUser }) => {
     let navigate = useNavigate()
 
     const [formValues, setFormValues] = useState({ username: '', password: '' })
@@ -18,7 +18,7 @@ const LoginUser = ({setUser}) => {
         setFormValues({ username: '', password: '' })
         setUser(payload)
         navigate(`/user/home/${payload.id}`)
-    
+
     }
 
     return (
@@ -30,10 +30,10 @@ const LoginUser = ({setUser}) => {
                             className="img-fluid login-image" alt="Dog Image" />
                     </div>
                     <div className="col-md-8 col-lg-6 col-xl-4">
-                        <LoginForm handleSubmit={handleSubmit} handleChange={handleChange} formValues={formValues}/>
+                        <LoginForm handleSubmit={handleSubmit} handleChange={handleChange} formValues={formValues} />
                         <div className="text-center text-lg-start mt-4 pt-2">
-                                <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/user/register" className="link-danger">Register</Link></p>
-                            </div>
+                            <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/user/register" className="themed-link">Register</Link></p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -32,6 +32,10 @@
     color: white;
 }
 
+.themed-link {
+    color:#5a649f
+}
+
 .progress-bar-bg {
     background-color:#8c8c8c; 
     font-size: 14px;
@@ -44,10 +48,12 @@
 .landing-header {
     height: 200px;
 }
+
 .main-search {
     margin-top: 30px;
     height: 100%;
 }
+
 .paws-emoji-white {
     color: transparent;
     text-shadow: 0 0 0 white;

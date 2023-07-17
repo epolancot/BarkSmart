@@ -12,6 +12,7 @@ const EditProfileForm = ({ profile, formFields }) => {
         setFormValues(formFields)
     }
 
+
     console.log(profile.accountType)
     let editForm
     switch (profile.accountType) {
@@ -69,19 +70,6 @@ const EditProfileForm = ({ profile, formFields }) => {
                                     id="inputCity"
                                     className="form-control"
                                     value={formValues.city}
-                                />
-                            </div>
-                        </div>
-                        <div className="d-flex flex-row align-items-center mb-4">
-                            <div className="form-outline flex-fill mb-0">
-                                <label className="form-label" htmlFor="inputBio">Bio</label>
-                                <textarea
-                                    onChange={handleChange}
-                                    type="text"
-                                    name="bio"
-                                    id="inputBio"
-                                    className="form-control"
-                                    value={formValues.bio}
                                 />
                             </div>
                         </div>

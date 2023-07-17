@@ -37,8 +37,8 @@ const LoginForm = ({ handleSubmit, handleChange, formValues }) => {
                     </div>
                     <a href="#!" className="text-body">Forgot password?</a>
                 </div>
-                <div className="mt-5">
-                    <button type="submit" className="btn btn-primary btn-lg" disabled={!formValues.username || !formValues.password}>Login</button>
+                <div className="mt-5 text-center">
+                    <button type="submit" className="btn themed-btn btn-lg" disabled={!formValues.username || !formValues.password}>Login</button>
                 </div>
             </form>
         </div>
