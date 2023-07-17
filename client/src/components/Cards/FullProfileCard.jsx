@@ -3,8 +3,8 @@ import ChangeProfilePictureBtn from '../Buttons/ChangeProfilePictureBtn'
 
 
 const ProfileCardFull = ({
-    user,
     profile,
+    setDogProfile,
     title,
     type,
     canEdit,
@@ -64,6 +64,7 @@ const ProfileCardFull = ({
                                             profile={profile}
                                             type={type}
                                             canEdit={canEdit}
+                                            setDogProfile={setDogProfile}
                                         />
                                     </div>
                                 </div>

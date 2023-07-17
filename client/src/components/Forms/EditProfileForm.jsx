@@ -1,5 +1,7 @@
-import { useState, formFields } from "react"
-const EditProfileForm = ({ profile, formFields }) => {
+import { UpdateProfile } from '../../services/ProfileServices'
+
+import { useState } from "react"
+const EditProfileForm = ({ profile, formFields, setDogProfile }) => {
     const [formValues, setFormValues] = useState(formFields)
 
     const handleChange = (e) => {
@@ -9,7 +11,48 @@ const EditProfileForm = ({ profile, formFields }) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        setFormValues(formFields)
+        const profileInfo = {
+            id: profile._id,
+            accountType: profile.accountType
+        }
+
+        let updatedForm
+        switch (profile.accountType) {
+            case "user":
+                updatedForm = {
+                    name: formValues.name,
+                    lastName: formValues.lastName,
+                    email: formValues.email,
+                    city: formValues.city
+                }
+                break
+            case "trainer":
+                updatedForm = {
+                    name: formValues.name,
+                    lastName: formValues.lastName,
+                    email: formValues.email,
+                    bio: formValues.bio,
+                    city: formValues.city
+                }
+                break
+            case "dog":
+                updatedForm = {
+                    name: formValues.name,
+                    breed: formValues.breed,
+                    dob: formValues.dob
+                }
+                break
+        }
+        
+        const updatedProfile = await UpdateProfile(profileInfo, updatedForm)
+
+        if (updatedProfile) {
+            if(profile.accountType === "dog") {
+                setDogProfile(updatedProfile)
+            }
+        }
+        
+
     }
 
 
@@ -83,7 +126,7 @@ const EditProfileForm = ({ profile, formFields }) => {
                         </div>
                     </form>
                 </div>
-                break
+            break
         case "trainer":
             editForm =
                 <div>
@@ -157,58 +200,58 @@ const EditProfileForm = ({ profile, formFields }) => {
             break
         case "dog":
             editForm =
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <div className="d-flex flex-row align-items-center mb-4">
-                        <div className="form-outline flex-fill mb-0">
-                            <label className="form-label" htmlFor="inputName">Name</label>
-                            <input
-                                onChange={handleChange}
-                                type="text"
-                                name="name"
-                                id="inputName"
-                                className="form-control"
-                                value={formValues.name}
-                                required
-                            />
+                <div>
+                    <form onSubmit={handleSubmit}>
+                        <div className="d-flex flex-row align-items-center mb-4">
+                            <div className="form-outline flex-fill mb-0">
+                                <label className="form-label" htmlFor="inputName">Name</label>
+                                <input
+                                    onChange={handleChange}
+                                    type="text"
+                                    name="name"
+                                    id="inputName"
+                                    className="form-control"
+                                    value={formValues.name}
+                                    required
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex flex-row align-items-center mb-4">
-                        <div className="form-outline flex-fill mb-0">
-                            <label className="form-label" htmlFor="inputBreed">Breed</label>
-                            <input
-                                onChange={handleChange}
-                                type="text"
-                                name="breed"
-                                id="inputBreed"
-                                className="form-control"
-                                value={formValues.breed}
-                                required
-                            />
+                        <div className="d-flex flex-row align-items-center mb-4">
+                            <div className="form-outline flex-fill mb-0">
+                                <label className="form-label" htmlFor="inputBreed">Breed</label>
+                                <input
+                                    onChange={handleChange}
+                                    type="text"
+                                    name="breed"
+                                    id="inputBreed"
+                                    className="form-control"
+                                    value={formValues.breed}
+                                    required
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex flex-row align-items-center mb-4">
-                        <div className="form-outline flex-fill mb-0">
-                            <label className="form-label" htmlFor="inputDob">Date of Birth</label>
-                            <input
-                                onChange={handleChange}
-                                type="date"
-                                name="dob"
-                                id="inputDob"
-                                className="form-control"
-                                value={formValues.dob}
-                                required
-                            />
+                        <div className="d-flex flex-row align-items-center mb-4">
+                            <div className="form-outline flex-fill mb-0">
+                                <label className="form-label" htmlFor="inputDob">Date of Birth</label>
+                                <input
+                                    onChange={handleChange}
+                                    type="date"
+                                    name="dob"
+                                    id="inputDob"
+                                    className="form-control"
+                                    value={formValues.dob}
+                                    required
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <button
-                            type="submit"
-                            className="btn themed-btn btn-lg"
-                        >Update</button>
-                    </div>
-                </form>
-            </div>
+                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            <button
+                                type="submit"
+                                className="btn themed-btn btn-lg"
+                            >Update</button>
+                        </div>
+                    </form>
+                </div>
             break
     }
 

@@ -1,8 +1,9 @@
 import EditProfileForm from '../Forms/EditProfileForm'
 import { Button, Modal } from "react-bootstrap"
 import { useState } from "react"
+import moment from 'moment'
 
-const EditProfileBtn = ({ profile }) => {
+const EditProfileBtn = ({ profile, setDogProfile }) => {
     const [showEditProfileForm, setShowEditProfileForm] = useState(false);
 
     let formFields
@@ -59,11 +60,13 @@ const EditProfileBtn = ({ profile }) => {
             if (profile.breed) {
                 formFields.breed = profile.breed
             }
+
             if (profile.dob) {
-                const date = new Date(profile.dob)
-                const yyyy = date.getFullYear().toString()
-                const MM = ("0" + date.getMonth().toString()).slice(-2)
-                const dd = ("0" + date.getDate().toString()).slice(-2)
+                const date = moment(profile.dob).format('L')
+                const formatDate = date.split("/")
+                const yyyy = formatDate[2]
+                const MM = formatDate[0]
+                const dd = formatDate[1]
                 formFields.dob = `${yyyy}-${MM}-${dd}`
             }
             break
@@ -81,7 +84,7 @@ const EditProfileBtn = ({ profile }) => {
                     <Modal.Title>Edit Profile</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <EditProfileForm profile={profile} formFields={formFields} />
+                    <EditProfileForm profile={profile} formFields={formFields} setDogProfile={setDogProfile} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleCloseEditProfileForm}>

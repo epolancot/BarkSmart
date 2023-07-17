@@ -3,17 +3,18 @@ import ProfileDogList from '../Sections/ProfileDogList'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 
-const ProfileCardBody = ({ type, title, profile, canEdit}) => {
+const ProfileCardBody = ({ type, title, profile, canEdit, setDogProfile}) => {
     let editProfileBtn
     if (canEdit) {
-        editProfileBtn = <EditProfileBtn profile={profile}/>
+        editProfileBtn = <EditProfileBtn profile={profile} setDogProfile={setDogProfile}/>
     }
-    let date,ownerId, ownerAvatar, birthday
+    let date,age, ownerId, ownerAvatar, birthday
     if (profile.dob) {
         date = new Date(profile.dob)
+        age = moment(date, "YYYYMMDD").fromNow(true)
+        birthday = `${date.toLocaleString('default', { month: 'long' })} ${date.getDate().toString()}`
         ownerId = profile.owner._id
         ownerAvatar = profile.owner.avatar
-        birthday = `${date.toLocaleString('default', { month: 'long' })} ${date.getDate().toString()}`
     }
     let dogSectionTitle, dogSection
     if (profile.dogs) {
@@ -72,8 +73,8 @@ const ProfileCardBody = ({ type, title, profile, canEdit}) => {
                     <hr className="mt-0 mb-4" />
                     <h6>Breed</h6>
                     <p className="text-muted">{profile.breed}</p>
-                    <h6>Born</h6>
-                    <p className="text-muted">{moment(date, "YYYYMMDD").fromNow()}</p>
+                    <h6>Age</h6>
+                    <p className="text-muted">{age}</p>
                     <h6>Birthday</h6>
                     <p className="text-muted">{birthday}</p>
                     <h6>Owner</h6>

@@ -44,7 +44,8 @@ const CreateDog = async (req, res) => {
 const UpdateDog = async (req, res) => {
     try {
         const dog = await Dog.findByIdAndUpdate(req.params.dog_id, req.body, { new: true })
-        res.send(dog)
+        const updatedDog = await Dog.findById(req.params.dog_id).populate("owner")
+        res.send(updatedDog)
     } catch (error) {
         throw error
     }

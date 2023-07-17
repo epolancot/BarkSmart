@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react'
 const DogDetails = ({ user }) => {
     const [dogProfile, setDogProfile] = useState('')
     const [avatar, setAvatar] = useState('')
-    const [profileInfoUpdate, setProfileInfoUpdate] = useState(0)
 
     let { id } = useParams()
 
@@ -17,7 +16,8 @@ const DogDetails = ({ user }) => {
             setAvatar(response.avatar)
         }
         getDogProfile()
-    }, [avatar, profileInfoUpdate])
+    }, [avatar])
+
 
     let canEdit
     if (dogProfile){
@@ -26,12 +26,12 @@ const DogDetails = ({ user }) => {
         }
     }
 
-
     return (
         <div>
             <FullProfileCard 
                 user={user}
                 profile={dogProfile} 
+                setDogProfile={setDogProfile}
                 title={`${dogProfile.name}'s information`}
                 type="dog"
                 css="dog-profile-bg"
