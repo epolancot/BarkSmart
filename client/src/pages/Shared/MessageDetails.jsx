@@ -1,3 +1,4 @@
+import ReplyMessageBtn from '../../components/Buttons/ReplyMessageBtn'
 import { GetMessage } from '../../services/MessageServices'
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
@@ -19,6 +20,17 @@ const MessageDetails = ({ user }) => {
 
         GetMessageDetails()
     }, [])
+    
+    let replyBtn
+    if (user) {
+        if (message) {
+            if (user.id === message.recipientId) {
+                replyBtn = <ReplyMessageBtn message={message} />
+            }
+        }
+
+
+    }
 
     return (
         <div className="container">
@@ -31,6 +43,9 @@ const MessageDetails = ({ user }) => {
                     <hr className="mt-5" />
                     <div className="message-details-footer text-center">
                         <p><i>{options.direction} <ReactTimeAgo date={moment(message.createdAt).format("YYYY-MM-DD HH:mm")} locale={'en-US'} /></i></p>
+                        <div>
+                        {replyBtn}
+                        </div>
                     </div>
                 </div>
             </div>
