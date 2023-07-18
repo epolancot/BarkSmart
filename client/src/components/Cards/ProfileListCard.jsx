@@ -10,7 +10,7 @@ const ProfileListCard = ({profiles, cardTitle}) => {
 
 let noDogRegisteredMsg     
 if (profiles.length === 0) {
-    noDogRegisteredMsg = <div className="text-center mt-3"><i>No dogs registered yet.</i></div>
+    noDogRegisteredMsg = <div className="text-center mt-3"><i>No dog registered yet.</i></div>
 }
 
     return (

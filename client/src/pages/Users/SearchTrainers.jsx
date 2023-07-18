@@ -10,7 +10,7 @@ const SearchTrainers = ({ user }) => {
     const [searchQuery, setSearchQuery] = useState('')
     const [trainersList, setTrainersList] = useState([])
 
-    const searchPlaceholder = "Name or City"
+    const searchPlaceholder = "Trainer's Name or City"
 
     useEffect(() => {
         const GetTrainersList = async () => {

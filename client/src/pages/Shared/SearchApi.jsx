@@ -37,7 +37,7 @@ const SearchApi = (user) => {
     } else {
         headerSpace = 
         <div className="landing-header text-center">
-            <h3>Learn more about your dog!</h3>
+            <h3>Learn more about your dog.</h3>
         </div>
     }
 

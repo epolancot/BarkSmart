@@ -82,34 +82,6 @@ const UserRegistrationForm = ({ id, handleCloseRegistration,dogListUpdate, setDo
                         />
                     </div>
                 </div>
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <label className="form-label" htmlFor="inputWeight">Weight</label>
-                        <input
-                            onChange={handleChange}
-                            type="text"
-                            name="weight"
-                            id="inputWeight"
-                            className="form-control"
-                            value={formValues.weight}
-                            placeholder='Optional'
-                        />
-                    </div>
-                </div>
-                <div className="d-flex flex-row align-items-center mb-4">
-                    <div className="form-outline flex-fill mb-0">
-                        <label className="form-label" htmlFor="inputHeight">Height</label>
-                        <input
-                            onChange={handleChange}
-                            type="text"
-                            name="height"
-                            id="inputHeight"
-                            className="form-control"
-                            value={formValues.height}
-                            placeholder='Optional'
-                        />
-                    </div>
-                </div>
                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button
                         type="submit"

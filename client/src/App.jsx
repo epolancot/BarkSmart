@@ -6,8 +6,8 @@ import LandingNavBar from './components/NavBars/LandingNavBar'
 import UserNavBar from './components/NavBars/UserNavBar'
 import TrainerNavBar from './components/NavBars/TrainerNavBar'
 import Footer from './components/Footers/Footer'
-import Landing from './pages/Open/Landing'
 import SearchApi from './pages/Shared/SearchApi'
+import ApiDogDetails from './pages/Shared/ApiDogDetails'
 import DogDetails from './pages/Shared/DogDetails'
 import Messages from './pages/Shared/Messages'
 import MessageDetails from './pages/Shared/MessageDetails'
@@ -26,6 +26,7 @@ import RequestDetails from './pages/Trainers/RequestDetails'
 
 function App() {
   const [user, setUser] = useState(null)
+  const [searchNav, setSearchNav] = useState(["landing"])
   const [currentUserAvatar, setCurrentUserAvatar] = useState(null)
 
 
@@ -70,8 +71,9 @@ function App() {
         <div className="flex-wrapper">
           <main>
             <Routes>
-              <Route path="/" element={<SearchApi user={user}/>} />
-              <Route path="/search-api" element={<SearchApi user={user} />}  />
+              <Route path="/" element={<SearchApi user={user} searchNav={searchNav} setSearchNav={setSearchNav}/>} />
+              <Route path="/search-api" element={<SearchApi user={user} searchNav={searchNav}/>}  />
+              <Route path="/search-api/dog/:name" element={<ApiDogDetails user={user} />}  />
               <Route path="/user/login" element={<LoginUser setUser={setUser}/>} />
               <Route path="/user/register" element={<RegisterUser setUser={setUser}/>} />
               <Route path="/user/home/:id" element={<HomeUser user={user}/>} />

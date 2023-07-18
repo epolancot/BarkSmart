@@ -59,6 +59,12 @@
     height: 100%;
 }
 
+.card-api-details {
+    width: 50%;
+    margin: 0 auto;
+}
+
+
 .paws-emoji-white {
     color: transparent;
     text-shadow: 0 0 0 white;
@@ -99,6 +105,11 @@ nav .active {
 .results-card:hover {
     transform: scale(1.05);
 }
+
+.list-group li {
+    border: none;
+}
+
 
 .login-image {
     border-radius: 20px;
@@ -349,6 +360,15 @@ nav .active {
         width: 40%;
         font-size: 0.9em;
     }
+
+    .short-card {
+        width: 95%
+    }
+
+    .card-api-details {
+        width: 75%;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -359,6 +379,11 @@ nav .active {
 
     .short-card {
         width: 95%;
+    }
+
+    .card-api-details {
+        width: 90%;
+        margin: 0 auto;
     }
 
     .full-profile-card-side-bar {
