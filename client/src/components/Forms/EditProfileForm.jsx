@@ -1,6 +1,6 @@
 import { UpdateProfile } from '../../services/ProfileServices'
-
 import { useState } from "react"
+
 const EditProfileForm = ({ profile, formFields, setDogProfile }) => {
     const [formValues, setFormValues] = useState(formFields)
 

@@ -56,6 +56,15 @@ export const UpdateProfile = async (profileInfo, data) => {
     }
 }
 
+export const DeleteProfile = async (id) => {
+    try {
+        const res = await Client.delete(`/dog/${id}`)
+        return res.data
+    } catch (error) {   
+        throw error
+    }
+}
+
 export const updateUser = async (id, data) => {
     try {
         const res = await Client.put(`/users/${id}`, data)

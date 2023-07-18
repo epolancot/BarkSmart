@@ -66,8 +66,8 @@ const EditProfileBtn = ({ profile, setDogProfile }) => {
                 const formatDate = date.split("/")
                 const yyyy = formatDate[2]
                 const MM = formatDate[0]
-                const dd = formatDate[1]
-                formFields.dob = `${yyyy}-${MM}-${dd}`
+                const dd = Number(formatDate[1]) + 1
+                formFields.dob = `${yyyy}-${MM}-${dd.toString()}`
             }
             break
     }
@@ -78,7 +78,7 @@ const EditProfileBtn = ({ profile, setDogProfile }) => {
 
     return (
         <div>
-            <button className="btn themed-btn" onClick={handleShowEditProfileForm}>Edit Profile</button>
+            <button className="btn themed-btn edit-profile-btn" onClick={handleShowEditProfileForm}>Edit Profile</button>
             <Modal show={showEditProfileForm} onHide={handleCloseEditProfileForm}>
                 <Modal.Header closeButton>
                     <Modal.Title>Edit Profile</Modal.Title>

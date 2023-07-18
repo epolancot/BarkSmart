@@ -1,7 +1,6 @@
 import ProfileCardBody from '../Sections/ProfileCardBody'
 import ChangeProfilePictureBtn from '../Buttons/ChangeProfilePictureBtn'
 
-
 const ProfileCardFull = ({
     profile,
     setDogProfile,

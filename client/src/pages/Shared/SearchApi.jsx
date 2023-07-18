@@ -35,7 +35,10 @@ const SearchApi = (user) => {
             searchResultsSection = <ApiSearchResults searchResults={searchResults} user={user}/>
         }
     } else {
-        headerSpace = <div className="landing-header"></div>
+        headerSpace = 
+        <div className="landing-header text-center">
+            <h3>Learn more about your dog!</h3>
+        </div>
     }
 
     return (

@@ -46,7 +46,12 @@
 }
 
 .landing-header {
-    height: 200px;
+    height: 10px;
+    font-family: 'Vidaloka', serif;
+}
+
+.landing-header h3 {
+    margin-top: 190px;
 }
 
 .main-search {
@@ -279,6 +284,13 @@ nav .active {
     margin: 0 auto;
 }
 
+.edit-profile-btn {
+    width: 125px;
+}
+
+.delete-profile-btn {
+    width: 125px;
+}
 .small-box-avatar {
     height: 70px;
     width: 70px;
