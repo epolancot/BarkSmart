@@ -84,7 +84,10 @@ const EditProfileBtn = ({ profile, setDogProfile }) => {
                     <Modal.Title>Edit Profile</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <EditProfileForm profile={profile} formFields={formFields} setDogProfile={setDogProfile} />
+                    <EditProfileForm profile={profile} 
+                    formFields={formFields} 
+                    setDogProfile={setDogProfile} 
+                    handleCloseEditProfileForm={handleCloseEditProfileForm} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleCloseEditProfileForm}>

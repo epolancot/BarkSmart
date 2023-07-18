@@ -1,7 +1,7 @@
 import { UpdateProfile } from '../../services/ProfileServices'
 import { useState } from "react"
 
-const EditProfileForm = ({ profile, formFields, setDogProfile }) => {
+const EditProfileForm = ({ profile, formFields, setDogProfile, handleCloseEditProfileForm }) => {
     const [formValues, setFormValues] = useState(formFields)
 
     const handleChange = (e) => {
@@ -52,6 +52,7 @@ const EditProfileForm = ({ profile, formFields, setDogProfile }) => {
             }
         }
         
+        handleCloseEditProfileForm()
 
     }
 

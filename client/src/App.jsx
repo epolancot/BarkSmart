@@ -1,6 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-import { Routes, Route, useParams } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import { CheckSession } from './services/Auth'
 import LandingNavBar from './components/NavBars/LandingNavBar'
 import UserNavBar from './components/NavBars/UserNavBar'
@@ -29,6 +29,8 @@ function App() {
   const [searchNav, setSearchNav] = useState(["landing"])
   const [currentUserAvatar, setCurrentUserAvatar] = useState(null)
 
+  const navigate = useNavigate()
+
 
   const checkToken = async () => {
     //If a token exists, sends token to localStorage to persist logged in user
@@ -48,6 +50,7 @@ function App() {
     //Reset all auth related state and clear localStorage
     setUser(null)
     localStorage.clear()
+    navigate("/")
   }
 
   let navBar
