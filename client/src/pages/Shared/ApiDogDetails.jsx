@@ -37,10 +37,22 @@ const ApiDogDetail = ({ user }) => {
     if (dog) {
         image = dog.image_link
         dogName = dog.name
-        description = <p className="card-text">{dog.name}`s have a minimum life expectancy of {dog.min_life_expectancy} years and a maximum of {dog.max_life_expectancy} years.
-            Their minimum height is {dog.min_height_male} inches for males and {dog.min_height_female} inches for
-            females, with a maximum height of {dog.max_height_male} and {dog.max_height_female} inches
-            respectively.</p>
+        
+        let minimumHeight
+        if (dog.min_height_male === dog.min_height_female) {
+            minimumHeight = `Their minimum height is ${dog.min_height_male} inches for both, males and females,`
+        } else {
+            minimumHeight = `Their minimum height is ${dog.min_height_male} for males and ${dog.min_height_female} for females,`
+        }
+
+        let maximumHeight
+        if (dog.max_height_male === dog.max_height_female) {
+            maximumHeight = `${dog.max_height_male} inches.`
+        } else {
+            maximumHeight = `${dog.max_height_male} and ${dog.max_height_female} respectively.`
+        }
+        description = <p className="card-text">{dog.name}`s have a minimum life expectancy of {dog.min_life_expectancy} years and a maximum life expectancy of {dog.max_life_expectancy} years.{' '}
+        {`${minimumHeight} with a maximum height of ${maximumHeight}`}</p>
 
         buffer = Object.entries(dog)
         traitsFilter = buffer.map((trait) => {
@@ -90,11 +102,12 @@ const ApiDogDetail = ({ user }) => {
                     <h5 className="card-title">{dogName}</h5>
                     {description}
                 <hr />
-                <div>
-                {dogTraits.map((trait) => (
-                    <li className="list-group-item">
+                <div className="container">
+                <div className="mt-3 mb-4 text-center"><h3>Traits</h3></div>
+                {dogTraits.map((trait, id) => (
+                    <div className="list-group-item mb-3" key={id}>
                         <ApiProgressBar trait={trait} />
-                    </li>
+                    </div>
                 ))}
                 </div>
                 </div>
