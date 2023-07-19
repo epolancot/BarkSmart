@@ -28,7 +28,7 @@ const requestSchema = new Schema(
     },
     dog: { 
       type: Schema.Types.ObjectId,
-      ref: 'dog'
+      ref: 'Dog'
     },
     participants: [{
       type: String

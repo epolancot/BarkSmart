@@ -22,7 +22,7 @@ export const GetRequests = async (username) => {
 export const GetRequest = async (id) => {
     try {
         console.log(id)
-        const res = await Client.get(`/requests/id/${id}`)
+        const res = await Client.get(`/requests/id/64b74899487b6e91e88bca4d`)
         return res.data
     } catch (error) {
         throw error

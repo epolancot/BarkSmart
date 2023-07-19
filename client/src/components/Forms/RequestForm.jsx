@@ -7,12 +7,11 @@ const RequestForm = ({ sender, recipient, handleCloseRequestForm }) => {
         name: sender.name,
         email: sender.email,
         phone: '',
-        dog: '',
+        dog: sender.dogs[0]._id,
         message: '',
     })
 
     const handleChange = (e) => {
-        console.log(e.target.value)
         setFormValues({ ...formValues, [e.target.name]: e.target.value })
     }
 
@@ -32,6 +31,7 @@ const RequestForm = ({ sender, recipient, handleCloseRequestForm }) => {
             })
 
             console.log(formValues)
+
             setFormValues({
                 message: '',
             })
@@ -88,14 +88,14 @@ const RequestForm = ({ sender, recipient, handleCloseRequestForm }) => {
                 </div>
                 <div className="d-flex flex-row align-items-center mb-4">
                     <div className="form-outline flex-fill mb-0">
-                        <label className="form-label" htmlFor="select-dog">Dog's profile</label>
+                        <label className="form-label" htmlFor="select-dog">Select Dog's profile</label>
                         <select className="form-select"
                             aria-label="Select"
                             id="select-dog"
                             name="dog"
                             onChange={handleChange}
                             value={formValues.dog}
-                            >
+                        >
                             {sender.dogs.map((dog) => (
                                 <option value={dog._id} key={dog._id}>{dog.name}</option>
                             ))}

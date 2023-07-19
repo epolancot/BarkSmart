@@ -58,8 +58,8 @@ const ProfileCardBody = ({ type, title, profile, canEdit, setDogProfile}) => {
             return (
                 <div>
                     <h6>{title}</h6>
-                    <div className="text-center">{profile.city}</div>
                     <hr className="mt-0 mb-4" />
+                    <div className="text-center"><h4>{profile.city}</h4></div>
                     <div className="row pt-1">
                         <p>{profile.bio}</p>
                     </div>

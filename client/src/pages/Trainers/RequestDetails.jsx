@@ -12,7 +12,7 @@ const RequestDetails = ({ user }) => {
 
     useEffect(() => {
         const GetRequestDetails = async () => {
-            const response = await GetRequest(id, user.username)
+            const response = await GetRequest(id)
             setRequest(response)
         }
 
