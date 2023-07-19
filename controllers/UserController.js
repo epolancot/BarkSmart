@@ -9,7 +9,7 @@ const CheckSession = async (req, res) => {
 const Login = async (req, res) => {
   try {
     const { username, password } = req.body
-    const user = await User.findOne({ username })
+    const user = await User.findOne({ username }).populate("dogs")
     let matched = await middleware.comparePassword(
       user.passwordDigest,
       password
@@ -25,6 +25,7 @@ const Login = async (req, res) => {
         accountType: user.accountType,
         dogs: user.dogs,
       }
+
       let token = middleware.createToken(payload)
       return res.send({ user: payload, token })
     }

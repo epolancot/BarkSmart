@@ -7,10 +7,12 @@ const RequestForm = ({ sender, recipient, handleCloseRequestForm }) => {
         name: sender.name,
         email: sender.email,
         phone: '',
+        dog: '',
         message: '',
     })
 
     const handleChange = (e) => {
+        console.log(e.target.value)
         setFormValues({ ...formValues, [e.target.name]: e.target.value })
     }
 
@@ -25,8 +27,11 @@ const RequestForm = ({ sender, recipient, handleCloseRequestForm }) => {
                 recipientName: recipient.name,
                 phone: formValues.phone,
                 message: formValues.message,
+                dog: formValues.dog,
                 participants: [sender.username, recipient.username]
             })
+
+            console.log(formValues)
             setFormValues({
                 message: '',
             })
@@ -83,9 +88,26 @@ const RequestForm = ({ sender, recipient, handleCloseRequestForm }) => {
                 </div>
                 <div className="d-flex flex-row align-items-center mb-4">
                     <div className="form-outline flex-fill mb-0">
+                        <label className="form-label" htmlFor="select-dog">Dog's profile</label>
+                        <select className="form-select"
+                            aria-label="Select"
+                            id="select-dog"
+                            name="dog"
+                            onChange={handleChange}
+                            value={formValues.dog}
+                            >
+                            {sender.dogs.map((dog) => (
+                                <option value={dog._id} key={dog._id}>{dog.name}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <div className="d-flex flex-row align-items-center mb-4">
+                    <div className="form-outline flex-fill mb-0">
                         <label className="form-label" htmlFor="inputMessage">Message</label>
                         <textarea
                             onChange={handleChange}
+                            rows="7"
                             type="text"
                             name="message"
                             id="inputMessage"
@@ -97,7 +119,7 @@ const RequestForm = ({ sender, recipient, handleCloseRequestForm }) => {
                 <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button
                         type="submit"
-                        className="btn btn-primary btn-lg"
+                        className="btn themed-btn btn-lg"
                     >Send</button>
                 </div>
             </form>

@@ -3,12 +3,12 @@ import ReactTimeAgo from 'react-time-ago'
 import SendMessageButton from '../../components/Buttons/SendMessageBtn'
 import { GetRequest } from '../../services/RequestServices'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 const RequestDetails = ({ user }) => {
     let { id } = useParams()
 
-    const [request, setRequest] = useState([])
+    const [request, setRequest] = useState('')
 
     useEffect(() => {
         const GetRequestDetails = async () => {
@@ -18,23 +18,35 @@ const RequestDetails = ({ user }) => {
 
         GetRequestDetails()
     }, [])
+    let dogSection, sendMsgBtn
+    if (user) {
+        if (request !== "") {
+            const sender = {
+                id: user.id,
+                username: user.username,
+                name: user.name,
+                email: user.email,
+                type: user.accountType
+            }
+            const recipient = {
+                id: request.senderId._id,
+                username: request.senderId.username,
+                name: request.senderId.name,
+                email: request.senderId.email,
+                type: request.senderId.accountType
+            }
 
-
-    const sender = {
-        id: user.id,
-        username: user.username,
-        name: user.name,
-        email: user.email,
-        type: user.accountType
+            console.log(request)
+            // if (request.senderId.dog) {
+            //     dogSection = 
+            //     <Link to={`/dog/id/${ownerId}`}>
+            //         <img src={ownerAvatar} className="small-box-avatar" />
+            //     </Link>
+            // }
+            sendMsgBtn = <SendMessageButton sender={sender} recipient={recipient} />
+        }
     }
 
-    const recipient = {
-        id: request.senderId._id,
-        username: request.senderId.username,
-        name: request.senderId.name,
-        email: request.senderId.email,
-        type: request.senderId.accountType
-    }
 
     return (
         <div className="container">
@@ -49,8 +61,8 @@ const RequestDetails = ({ user }) => {
                         <p><i> Received <ReactTimeAgo date={moment(request.createdAt).format("YYYY-MM-DD HH:mm")} locale={'en-US'} /></i></p>
                     </div>
                 </div>
-                <div>
-                    <SendMessageButton sender={sender} recipient={recipient}/>
+                <div className="mb-4">
+                    {sendMsgBtn}
                 </div>
             </div>
         </div>

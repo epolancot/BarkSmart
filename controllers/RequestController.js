@@ -12,7 +12,7 @@ const GetRequests= async (req, res) => {
 
 const GetRequest = async (req, res) => {
   try {
-      const request = await Request.findById(req.params.request_id).populate("senderId")
+      const request = await Request.findById(req.params.request_id).populate("senderId").populate("dog")
 
       res.send(request)
   } catch (error) {

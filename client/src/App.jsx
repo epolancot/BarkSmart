@@ -64,7 +64,6 @@ function App() {
     navBar = <LandingNavBar />
   }
 
-
   return (
     <>
       <div className="App">

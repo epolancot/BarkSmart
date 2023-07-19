@@ -18,7 +18,6 @@ const LoginUser = ({ setUser }) => {
         setFormValues({ username: '', password: '' })
         setUser(payload)
         navigate(`/user/home/${payload.id}`)
-
     }
 
     return (

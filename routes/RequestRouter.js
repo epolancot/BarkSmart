@@ -8,11 +8,9 @@ router.get('/user/:username',
             controller.GetRequests)
             
 router.get('/id/:request_id', 
-            middleware.stripToken, 
-            middleware.verifyToken, 
             controller.GetRequest)
 
-router.post('/',
+router.post('/',     
             middleware.stripToken, 
             middleware.verifyToken,  
             controller.CreateRequest)

@@ -38,12 +38,12 @@ const ProfileCardBody = ({ type, title, profile, canEdit, setDogProfile}) => {
         case "user":
             return (
                 <div>
-                    <h6>{title}</h6>
+                    <h6>{profile.name} {profile.lastName}</h6>
                     <hr className="mt-0 mb-4" />
                     <div>
                     </div>
-                        <h6>Email</h6>
-                        <p className="text-muted">{profile.email}</p>
+                        <h6>City</h6>
+                        <p className="text-muted">{profile.city}</p>
                     <h6>{dogSectionTitle}</h6>
                     <hr className="mt-0 mb-4" />
                     <div className="d-flex text-center">

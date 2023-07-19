@@ -174,6 +174,19 @@ const EditProfileForm = ({ profile, formFields, setDogProfile, handleCloseEditPr
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                             <div className="form-outline flex-fill mb-0">
+                                <label className="form-label" htmlFor="inputCity">City</label>
+                                <input
+                                    onChange={handleChange}
+                                    type="text"
+                                    name="city"
+                                    id="inputCity"
+                                    className="form-control"
+                                    value={formValues.city}
+                                />
+                            </div>
+                        </div>
+                        <div className="d-flex flex-row align-items-center mb-4">
+                            <div className="form-outline flex-fill mb-0">
                                 <label className="form-label" htmlFor="inputBio">Bio</label>
                                 <textarea
                                     onChange={handleChange}
