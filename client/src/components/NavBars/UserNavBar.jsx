@@ -44,7 +44,7 @@ const UserNavBar = ({ handleLogOut, user }) => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/search-api' className="dropdown-item">
+                                    <Link to='/' className="dropdown-item">
                                         <span data-bs-toggle="collapse" data-bs-target="#navbarToggler" >
                                             Dog breeds
                                         </span>
