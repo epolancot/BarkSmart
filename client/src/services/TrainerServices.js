@@ -35,3 +35,30 @@ export const GetTrainersByName = async (query) => {
         throw error
     }
 }
+
+export const UpdateTrainer = async (id, data) => {
+    try {
+        const res = await Client.put('profiles/trainers/id/'+id, data)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}
+
+export const AddDog = async (id, data) => {
+    try {
+        const res = await Client.post(`profiles/trainers/id/${id}/follow/${data}`)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}
+
+export const GetDogs = async (id) => {
+    try {
+        const res = await Client.get(`profiles/trainers/id/${id}/dogs`)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}

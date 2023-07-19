@@ -1,15 +1,21 @@
 import EditProfileBtn from '../Buttons/EditProfileBtn'
 import DeleteProfileBtn from '../Buttons/DeleteProfileBtn'
 import ProfileDogList from '../Sections/ProfileDogList'
+import AddDogToMyListBtn from '../Buttons/AddDogToMyListBtn'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 
-const ProfileCardBody = ({ type, title, profile, canEdit, setDogProfile}) => {
+const ProfileCardBody = ({ user, type, title, profile, canEdit, setDogProfile}) => {
     let editProfileBtn, deleteProfileBtn
     if (canEdit) {
         editProfileBtn = <EditProfileBtn profile={profile} setDogProfile={setDogProfile}/>
         deleteProfileBtn = <DeleteProfileBtn profile={profile} />
     }
+    let AddToMyListBtn
+    if (user.accountType === "trainer") {
+        AddToMyListBtn = <AddDogToMyListBtn profile={profile} user={user}/>
+    }
+
     let date,age, ownerId, ownerAvatar, birthday
     if (profile.dob) {
         date = new Date(profile.dob)
@@ -88,6 +94,7 @@ const ProfileCardBody = ({ type, title, profile, canEdit, setDogProfile}) => {
                     </div>
                     <p className="text-muted">{profile.ownerName}</p>
                     <hr className="mt-0 mb-4" />
+                    {AddToMyListBtn}
                     <div className="row pt-1">
                     <div className="col">
                     {editProfileBtn}

@@ -18,9 +18,12 @@ const RequestDetails = ({ user }) => {
 
         GetRequestDetails()
     }, [])
-    let dogSection, sendMsgBtn
+    let dogSection, sendMsgBtn, message, dogName
     if (user) {
         if (request !== "") {
+            message = <p><b>Message: </b><br/>{request.message}</p>
+            dogName = request.dog.name
+
             const sender = {
                 id: user.id,
                 username: user.username,
@@ -36,13 +39,12 @@ const RequestDetails = ({ user }) => {
                 type: request.senderId.accountType
             }
 
-            console.log(request)
-            // if (request.senderId.dog) {
-            //     dogSection = 
-            //     <Link to={`/dog/id/${ownerId}`}>
-            //         <img src={ownerAvatar} className="small-box-avatar" />
-            //     </Link>
-            // }
+            if (request.dog) {
+                dogSection =
+                    <Link to={`/dog/id/${request.dog._id}`}>
+                        <img src={request.dog.avatar} className="small-box-avatar" />
+                    </Link>
+            }
             sendMsgBtn = <SendMessageButton sender={sender} recipient={recipient} />
         }
     }
@@ -55,7 +57,11 @@ const RequestDetails = ({ user }) => {
                     <h5>Request from {request.senderName}</h5>
                 </div>
                 <div className="card-body">
-                    <p>{request.message}</p>
+                    <div className="text-center mb-3">
+                        {dogSection}
+                        <p><b>{dogName}</b></p>
+                    </div>
+                    {message}
                     <hr className="mt-5" />
                     <div className="message-details-footer text-center">
                         <p><i> Received <ReactTimeAgo date={moment(request.createdAt).format("YYYY-MM-DD HH:mm")} locale={'en-US'} /></i></p>

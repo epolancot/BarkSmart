@@ -124,12 +124,35 @@ const UpdateProfile = async (req, res) => {
         res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
     }
 }
+
+const AddDog = async (req, res) => {
+    try {
+        const profile = await Trainer.findById(req.params.trainer_id)
+        profile.dogs.push(req.params.dog_id)
+        profile.save()
+        res.send(profile)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+    }
+}
+
+const GetDogs = async (req, res) => {
+    try {
+        const profile = await Trainer.findOne({_id: req.params.trainer_id}).populate("dogs")
+            res.send(profile)
+    } catch (error) {
+        res.status(401).send({ status: 'Error', msg: 'An error has occurred! ' + error })
+    }
+}
+
 module.exports = {
     Login,
     Register,
     GetAll,
     GetProfile,
-    GetByQuery,
+    GetByQuery, 
     GetByZipCode,
-    UpdateProfile
+    UpdateProfile,
+    GetDogs,
+    AddDog
 }

@@ -30,8 +30,6 @@ const RequestForm = ({ sender, recipient, handleCloseRequestForm }) => {
                 participants: [sender.username, recipient.username]
             })
 
-            console.log(formValues)
-
             setFormValues({
                 message: '',
             })

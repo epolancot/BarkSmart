@@ -21,7 +21,7 @@ const NavBar = ({ user, handleLogOut }) => {
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 View
                             </a>
-                            <ul className="dropdown-menu themed-background">
+                            <ul className="dropdown-menu themed-background dropdown-menu-end">
                                 <li>
                                     <Link to='/messages' className="dropdown-item">
                                         <span data-bs-toggle="collapse" data-bs-target="#navbarToggler" >
@@ -33,13 +33,6 @@ const NavBar = ({ user, handleLogOut }) => {
                                     <Link to='/trainer/requests' className="dropdown-item">
                                         <span data-bs-toggle="collapse" data-bs-target="#navbarToggler" >
                                             Requests
-                                        </span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to='/clients' className="dropdown-item">
-                                        <span data-bs-toggle="collapse" data-bs-target="#navbarToggler" >
-                                            Clients
                                         </span>
                                     </Link>
                                 </li>

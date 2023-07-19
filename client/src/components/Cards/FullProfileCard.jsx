@@ -8,7 +8,8 @@ const ProfileCardFull = ({
     type,
     canEdit,
     avatar,
-    setAvatar
+    setAvatar,
+    user
 }) => {
     let css
 
@@ -64,6 +65,7 @@ const ProfileCardFull = ({
                                             type={type}
                                             canEdit={canEdit}
                                             setDogProfile={setDogProfile}
+                                            user={user}
                                         />
                                     </div>
                                 </div>
