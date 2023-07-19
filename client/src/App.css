@@ -58,12 +58,28 @@
     margin-top: 30px;
     height: 100%;
 }
+.about h4 {
+    width: 60%;
+    margin: 0 auto;
+}
 
+.about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 150%;
+}
+
+.about-img-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-gap: 10px;
+    align-items: stretch;
+    margin-bottom: 50px;
+}
 .card-api-details {
     width: 50%;
     margin: 0 auto;
 }
-
 
 .paws-emoji-white {
     color: transparent;
@@ -296,7 +312,7 @@ nav .active {
 }
 
 .edit-profile-btn {
-    width: 125px;
+    width: 120px;
 }
 
 .delete-profile-btn {
@@ -372,6 +388,11 @@ nav .active {
 }
 
 @media (max-width: 480px) {
+    .about-img-grid {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+        grid-gap: 10px;
+    }
+
     .api-search-results-grid {
         grid-template-columns: repeat(1, minmax(300px, 1fr));
         grid-gap: 10px;

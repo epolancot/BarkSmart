@@ -6,6 +6,7 @@ import LandingNavBar from './components/NavBars/LandingNavBar'
 import UserNavBar from './components/NavBars/UserNavBar'
 import TrainerNavBar from './components/NavBars/TrainerNavBar'
 import Footer from './components/Footers/Footer'
+import About from './pages/Open/About'
 import SearchApi from './pages/Shared/SearchApi'
 import ApiDogDetails from './pages/Shared/ApiDogDetails'
 import DogDetails from './pages/Shared/DogDetails'
@@ -74,6 +75,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<SearchApi user={user} searchNav={searchNav} setSearchNav={setSearchNav}/>} />
+              <Route path="/about" element={<About />}/>
               <Route path="/search-api" element={<SearchApi user={user} searchNav={searchNav}/>}  />
               <Route path="/search-api/dog/:name" element={<ApiDogDetails user={user} />}  />
               <Route path="/user/login" element={<LoginUser setUser={setUser}/>} />

@@ -11,17 +11,17 @@
         "id":3,
         "picture": "https://i.imgur.com/JtcRLCs.jpg"
     },
-    {
+    {    
         "id":4,
-        "picture": "https://i.imgur.com/GXz0YVn.jpg"
+        "picture": "https://i.imgur.com/2XKx1h1.png"
     },
     {
         "id":5,
-        "picture": "https://i.imgur.com/F27nt66.jpg"
+        "picture": "https://i.imgur.com/foXx3lg.jpg"
     },
     {
         "id":6,
-        "picture": "https://i.imgur.com/JXPa8Kp.jpg"
+        "picture": "https://i.imgur.com/GXz0YVn.jpg"
     },
     {
         "id":7,
@@ -38,6 +38,13 @@
     {
         "id":10,
         "picture": "https://i.imgur.com/YMjqlfY.jpg"
+    },
+    {
+        "id":11,
+        "picture": "https://i.imgur.com/7NSbl9j.png"
+    },
+    {
+        "id":12,
+        "picture": "https://i.imgur.com/ABItVxW.jpg"
     }
-
 ]

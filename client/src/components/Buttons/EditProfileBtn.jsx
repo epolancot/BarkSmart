@@ -12,7 +12,8 @@ const EditProfileBtn = ({ profile, setDogProfile }) => {
             formFields = {
                 name: "",
                 lastName: "",
-                email: ""
+                email: "",
+                city: ""
             }
             if (profile.name) {
                 formFields.name = profile.name
@@ -22,6 +23,9 @@ const EditProfileBtn = ({ profile, setDogProfile }) => {
             }
             if (profile.email) {
                 formFields.email = profile.email
+            }
+            if (profile.city) {
+                formFields.city = profile.city
             }
             break
         case "trainer":
