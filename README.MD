@@ -1,5 +1,5 @@
 
-![Banner](https://i.imgur.com/88FN6Ac.png)
+![Banner](https://i.imgur.com/F6CPLvy.jpg)
 
 ## Date: 7/7/2023
 
